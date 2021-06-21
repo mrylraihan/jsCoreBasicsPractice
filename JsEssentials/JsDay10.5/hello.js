@@ -10,3 +10,10 @@ const Abtn = document.getElementById("Abtn");
 const highAlert = ()=> alert("high Alert!!!");
 
 Abtn.addEventListener("click", highAlert);
+
+
+const thrd = document.getElementById("thrd");
+
+const lowalert = ()=> console.log('Hey whats up');
+
+thrd.addEventListener("click",lowalert);
