@@ -18,3 +18,4 @@ const lowalert = ()=> console.log('Hey whats up');
 
 thrd.addEventListener("click",lowalert);
 //test
+//test2
