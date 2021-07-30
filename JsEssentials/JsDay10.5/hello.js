@@ -17,3 +17,4 @@ const thrd = document.getElementById("thrd");
 const lowalert = ()=> console.log('Hey whats up');
 
 thrd.addEventListener("click",lowalert);
+//test
