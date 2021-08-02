@@ -1,3 +1,16 @@
+const btn = document.getElementById("reslt");
+
+const alertingresult = () => alert(result); 
+
+btn.addEventListener("click" , alertingresult)
+
+const anBtn = document.getElementById("usIn");
+
+const alertingUserInput = () => alert(userInput);
+
+anBtn.addEventListener("click", alertingUserInput);
+
+
 
 //step 1
 let userInput = 15;
@@ -18,6 +31,4 @@ result = result + 18;
 
 alert(userInput);
 alert(result);
-
-
 
