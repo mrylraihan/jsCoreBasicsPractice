@@ -13,8 +13,8 @@ addBtn.addEventListener('click', alerting);
 
 //second way 
 const alerting2 = ()=> {
-    alert(userInput2.value);
     const str1 = userInput2.value
+    alert(str1);
 console.log(str1);
 }
 addBtn2.addEventListener('click', alerting2);
@@ -24,11 +24,14 @@ addBtn2.addEventListener('click', alerting2);
 
 
 let savedInput;
-
+function storingValue(uservalue){
+savedInput = uservalue.value; 
+return savedInput;
+}
 const alerting3 = ()=>{
-    savedInput = userInput3.value;
-    alert(savedInput);
-    console.log(savedInput);
+    const newInput = storingValue(userInput3);
+    alert(newInput);
+    console.log(newInput);
 }
 addBtn3.addEventListener('click', alerting3);
 console.log(savedInput)
