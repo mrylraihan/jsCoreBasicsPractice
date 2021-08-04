@@ -5,12 +5,13 @@ const addBtn2 = document.getElementById('btn-add2');
 const userInput3 = document.getElementById('input-stuff3');
 const addBtn3 = document.getElementById('btn-add3');   
 
+//one way 
 const alerting = ()=>alert('Hey ' + userInput.value);
 addBtn.addEventListener('click', alerting);
 
   
 
-
+//second way 
 const alerting2 = ()=> {
     alert(userInput2.value);
     const str1 = userInput2.value
@@ -20,14 +21,14 @@ addBtn2.addEventListener('click', alerting2);
 
 
 //trying to figure out how to save input into a variable
-let str3;
-function savedName(){
-    str3= userInput3.value;
-    console.log(str3);
-   return str3
+
+
+let savedInput;
+
+const alerting3 = ()=>{
+    savedInput = userInput3.value;
+    alert(savedInput);
+    console.log(savedInput);
 }
-
-const savedInput = savedName();
-
-const alerting3 = ()=>alert(savedName);
 addBtn3.addEventListener('click', alerting3);
+console.log(savedInput)
