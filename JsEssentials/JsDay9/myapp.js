@@ -29,3 +29,22 @@ elmt.onclick = function(){
 var target2 = document.getElementById('hello');
 //inserting before 
 document.body.insertBefore(elmt, target2);
+
+
+//more practice
+
+const brownElmt = document.getElementById('brown');
+
+brownElmt.style.cssText = "width:200px; height:200px; background:brown;";
+
+const callingBrown = ()=> alert('brown is here!');
+//or
+//function callingBrown() {alert('brown is here!');}
+
+brownElmt.addEventListener('click', callingBrown);
+
+brownElmt.onclick = function logColor(){
+console.log('brown is here');
+}
+
+brownElmt.onclick = ()=> console.log('and again');// this will overide the onclick from earlier 

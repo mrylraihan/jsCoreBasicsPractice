@@ -31,3 +31,27 @@ const callconst = callable(function(){ return 'embed';});
 console.log(callconst);//logs embed
 //another way to do this is is to envoke the callconst() in the log if we didnt return
 //a envoked parameter
+
+
+
+function callable2(stuff){
+return stuff();// this will envoke the method im passing through
+}
+
+const calling2 = callable2(function(){
+  return 'stuff';
+})
+
+console.log(calling2);
+
+
+function runExpression(){
+  let a = 10;
+  function add(){// when runExpression is envoked this will get envoked as well
+   let b = 90;
+    return a + b;
+  }
+  return add();// this is returning the evnoked callable object
+}
+
+console.log(runExpression());
