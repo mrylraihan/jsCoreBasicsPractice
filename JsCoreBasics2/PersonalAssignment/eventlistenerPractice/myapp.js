@@ -30,3 +30,5 @@ const anotherButton = ()=> alert("another button press");
 anBtn.addEventListener("click", anotherButton);
 
 
+const sahi = document.getElementById('sahi');
+sahi.onclick = ()=> console.log('hey im sahi');

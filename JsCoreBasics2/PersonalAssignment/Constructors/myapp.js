@@ -48,10 +48,22 @@ Person.prototype = {
 }
 
 const person1 = new Person('wallie', 29, 'USA');
-const person2 = new Person('heshow', 29, 'USA');
+const person2 = new Person('heshow', 29, 'Yemen');
 
 console.log(person1.sayName());
 console.log(person2.sayName());
 
 console.log(person2.sleeping());
 console.log(person2.givingBio());
+
+const p1Btn = document.getElementById('p1btn');
+
+p1Btn.onclick = ()=>alert(person1.givingBio());
+
+const p2Btn = document.getElementById('p2btn');
+
+const personDoStuff = ()=>{
+  const details = person2.givingBio();
+  alert(details);
+}
+p2Btn.addEventListener('click',personDoStuff);
