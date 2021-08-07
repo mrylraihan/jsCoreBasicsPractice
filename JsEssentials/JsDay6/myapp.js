@@ -7,7 +7,7 @@ function Computer(brand, screenSize, name, color, price){
     
 }
 Computer.prototype ={
-    what: function (){return this;},// this point to the objec that is envoking the what method
+    what: function (){return this;},// this point to the object that is envoking the what method
     typeOnKeys: function (){console.log("Typing on keys"); return this;},
     turnOn: function (){console.log("Computer on"); return this;},
     powerDown: function (){return "Computer shutting down";}
