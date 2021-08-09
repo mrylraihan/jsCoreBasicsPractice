@@ -125,3 +125,14 @@ console.log(anotherArray1.splice(1, 1, 1))//returns an array of what we deleted 
 const storedDeleted = anotherArray1.splice(1, 1, 1);
 
 console.log(storedDeleted);//[1]
+
+
+
+//how to make your parameter take in array that has any amount of numbers
+function addMore(...nums){
+  for(n in nums){
+console.log(nums[n]);
+  }
+}
+
+addMore(1,2,3,4,5);
