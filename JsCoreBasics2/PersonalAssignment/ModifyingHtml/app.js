@@ -35,3 +35,8 @@ const el3 = document.getElementById('style3');
 el3.style.cssText += 'background:blue;'// this is suppose to modify the red bg to blue bg for el3 but the css 
 //styles bg is marked important to itr overrides this js
 console.log(getComputedStyle(el3));
+
+
+const el4 = document.getElementById('style4');
+el4.onclick = ()=>el4.style.cssText = 'background: blue';
+el4.ondblclick= ()=>el4.style.cssText = '';

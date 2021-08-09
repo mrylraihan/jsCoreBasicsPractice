@@ -48,3 +48,4 @@ appleBtn.addEventListener('click',applegenerator )
 
 const apple3 = applegenerator();
 console.log(apple3);
+
