@@ -136,3 +136,9 @@ console.log(nums[n]);
 }
 
 addMore(1,2,3,4,5);
+
+
+let wallie = ['w', 'a', 'l', 'y'];
+let w = wallie.splice(0,1,'m');
+console.log(wallie);
+console.log(w);
