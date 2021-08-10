@@ -11,3 +11,8 @@ const target = document.getElementById('green');
 document.body.insertBefore(element, target);// allows you to insert anywhere in the body 
 //specifically before any element (element = the new element you want to add, target the 
 //element you want it to come before)
+
+target.onclick = function setAlarm(){
+    alert('hey im green!');
+}
+
