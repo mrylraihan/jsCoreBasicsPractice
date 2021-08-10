@@ -2,15 +2,18 @@ const defautResult = 0;
 let currentResult = defautResult;
 let logEntries = [];
 
+//gets input from input fields and converts string to a number 
 function getUserNumberInput() {
   return parseInt(usrInput.value);
 }
 
+//Generates and writes calculation log
 function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
   const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
-  outputResult(currentResult, calcDescription);
+  outputResult(currentResult, calcDescription);// from vendor file
 }
 
+//function that creates the log object and pushes it to our array logEntries
 function writeToLog(operationIdentif, prevResult, operationNum, newResult) {
   const logEntry = {
     operation: operationIdentif,
@@ -18,7 +21,7 @@ function writeToLog(operationIdentif, prevResult, operationNum, newResult) {
     number: operationNum,
     result: newResult,
   };
-  logEntries.push(logEntry);
+  logEntries.push(logEntry);//push newly created log object to our array
   console.log(logEntries);
 }
 
