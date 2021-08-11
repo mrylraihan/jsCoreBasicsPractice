@@ -24,38 +24,44 @@ function writeToLog(operationIdentif, prevResult, operationNum, newResult) {
   logEntries.push(logEntry);//push newly created log object to our array
   console.log(logEntries);
 }
-
-function add() {
+function calculateResult(calculationType){
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
-  currentResult += enteredNumber;
-  createAndWriteOutput("+", initialResult, currentResult);
-  writeToLog("ADD", initialResult, enteredNumber, currentResult);
+  let mathOperator;
+  if (calculationType === 'ADD') {
+    currentResult += enteredNumber;
+    mathOperator = '+';
+  } else if (calculationType === 'SUB') {
+    currentResult -= enteredNumber;
+    mathOperator = '-';
+  }else if (calculationType === 'DIV') {
+    currentResult /= enteredNumber;
+    mathOperator = '/';
+  }else if (calculationType === 'MULTI') {
+    currentResult *= enteredNumber;
+    mathOperator = '*';
+  }
+  createAndWriteOutput(mathOperator, initialResult, currentResult);
+  writeToLog(calculationType, initialResult, enteredNumber, currentResult);
+}
+
+
+function add() {
+  calculateResult('ADD')
 }
 
 function subtract() {
-  const enteredNumber = getUserNumberInput();
-  const initialResult = currentResult;
-  currentResult -= enteredNumber;
-  createAndWriteOutput("-", initialResult, currentResult);
-  writeToLog("SUB", initialResult, enteredNumber, currentResult);
-}
-
-function multiply() {
-  const enteredNumber = getUserNumberInput();
-  const initialResult = currentResult;
-  currentResult *= enteredNumber;
-  createAndWriteOutput("*", initialResult, currentResult);
-  writeToLog("MULTI", initialResult, enteredNumber, currentResult);
+  calculateResult('SUB')
 }
 
 function divide() {
-  const enteredNumber = getUserNumberInput();
-  const initialResult = currentResult;
-  currentResult /= enteredNumber;
-  createAndWriteOutput("/", initialResult, currentResult);
-  writeToLog("DIV", initialResult, enteredNumber, currentResult);
+  calculateResult('DIV')
 }
+
+function multiply() {
+ calculateResult('MULTI')
+}
+
 
 addBtn.addEventListener("click", add);
 subtractBtn.addEventListener("click", subtract);
