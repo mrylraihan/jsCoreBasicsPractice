@@ -25,6 +25,14 @@ function writeToLog(operationIdentif, prevResult, operationNum, newResult) {
   console.log(logEntries);
 }
 function calculateResult(calculationType){
+  if (
+    calculationType !== 'ADD' &&
+    calculationType !== 'SUB' &&
+    calculationType !== 'MULTI' &&
+    calculationType !== 'DIV'
+  ) {
+    return;
+  }
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
   let mathOperator;
