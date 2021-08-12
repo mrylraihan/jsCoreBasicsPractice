@@ -15,7 +15,6 @@ const userName = isLogin ? 'Max':null;
 Ternary Operator syntax
 const variableName = variable your checking ? if true : if false;
 
-
 */
 
 let isLogin = 'Max';
