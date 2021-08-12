@@ -29,7 +29,8 @@ function calculateResult(calculationType){
     calculationType !== 'ADD' &&
     calculationType !== 'SUB' &&
     calculationType !== 'MULTI' &&
-    calculationType !== 'DIV'
+    calculationType !== 'DIV' ||
+    !enteredNumber
   ) {
     return;
   }
