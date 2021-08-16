@@ -20,9 +20,12 @@ const convertToRial = (dollar)=>{
         throw {message: 'Amount need to be in numbers'};
     }
 }
+
 try {
-    const yemenValue = convertToRial('ten');
+    const yemenValue = convertToRial(10);
 console.log(yemenValue);
+    const anotherValue = convertToRial('Ten');
+    console.log(anotherValue);
 } catch (e) {
     console.log('your error is : '+ e.message);
 }
