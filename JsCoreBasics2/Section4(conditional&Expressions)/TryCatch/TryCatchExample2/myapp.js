@@ -30,3 +30,20 @@ console.log(yemenValue);
     console.log('your error is : '+ e.message);
 }
 console.log('more stuff');
+
+
+
+function makeMoreMoney(amount, multipliedBy) {
+    let newAmount =  amount * multipliedBy;
+     return newAmount;
+}
+
+try {
+    const newAmountAfter = makeMoreMoney(200,'five');
+    if (!newAmountAfter) {
+    throw {message: 'for newAmount it needs to be in numbers'};
+    }
+    console.log(`This is your new amount ${newAmountAfter}`);
+} catch (error) {
+    console.log(error.message);
+}
