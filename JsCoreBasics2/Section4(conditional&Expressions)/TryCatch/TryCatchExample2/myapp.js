@@ -47,3 +47,22 @@ try {
 } catch (error) {
     console.log(error.message);
 }
+
+
+
+
+function anotherFunction(number) {
+    if (typeof number === 'number' ) {
+        number *= 2; 
+    }else{
+        throw {message: 'your input is not a number!'}
+    }
+   return number;
+}
+
+try{
+    const newNum = anotherFunction("five");
+    console.log(newNum);
+}catch(e){
+    console.log(e.message);
+}
