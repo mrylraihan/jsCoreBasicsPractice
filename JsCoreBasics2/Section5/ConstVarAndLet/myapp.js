@@ -54,7 +54,7 @@ console.log(hobbies);// this will log correctly because the variable is a var
 
 // excuction block 
 {
-    var test = 5;
+    var test = 'test';
     console.log(test);
 }
 console.log(test);
