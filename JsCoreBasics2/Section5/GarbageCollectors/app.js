@@ -16,3 +16,11 @@ function addListener() {
 
 
 addListenerBtn.addEventListener('click', addListener);
+
+
+// function addListener() {
+//   clickableBtn.addEventListener('click',function() {
+//     const value = messageInput.value;
+//     console.log(value || 'Clicked me!');
+//   });
+// }
