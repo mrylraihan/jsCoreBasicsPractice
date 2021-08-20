@@ -68,3 +68,12 @@ let isLoggedIn = true;
 const shoppingCart = isLoggedIn && ['books'];
 
 console.log(shoppingCart);
+
+
+
+function checkNumber(a){
+    return isNaN(a) ? 0 : a;
+}
+
+console.log(checkNumber(4));
+console.log(checkNumber('cx'));
