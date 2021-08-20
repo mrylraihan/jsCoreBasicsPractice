@@ -71,7 +71,7 @@ startGameBtn.addEventListener("click", () => {
   console.log(`the computer picked :${computerChoice}`);
   let message = `you picked ${playerChoice || DEFAULT_USER_CHOICE}, and computer pick ${computerChoice}, you`;
   if (winner === RESULT_DRAW) {
-    message += 'had a Draw!' 
+    message += ' had a Draw!' 
   }else if (winner === RESULT_COMPUTER_WINS) {
     message += ' lost';
   }else{
@@ -80,3 +80,5 @@ startGameBtn.addEventListener("click", () => {
   alert(message);
   gameIsRunning = false;
 });
+
+
