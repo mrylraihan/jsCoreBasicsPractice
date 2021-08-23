@@ -25,3 +25,5 @@ isAnnagram2('Name', 'AMNE');//this will log false because we split the string be
 
 
 isAnnagram2('name', 'eman');//this will log true because it is already lowercased
+
+//test
