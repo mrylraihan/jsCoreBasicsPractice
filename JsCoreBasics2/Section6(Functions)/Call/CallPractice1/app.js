@@ -26,25 +26,23 @@ console.log(fun.whatAMI());
 
 
 //Bind practice
-// const person1 = {
-//     name: "Wallie",
-//     lName: "Raihan",
-//     occupation: "developer",
-//     country: "yemen",
-//   };
+const person1 = {
+    name: "Wallie",
+    lName: "Raihan",
+    occupation: "developer",
+    country: "yemen",
+  };
   
-//   function printDeets() {
-//     console.log(
-//       `Hey im ${this.name} ${this.lName}, and im a ${this.occupation}, im also from ${this.country}`
-//     );
-//   }
+  function printDeets() {
+    console.log(
+      `Hey im ${this.name} ${this.lName}, and im a ${this.occupation}, im also from ${this.country}`
+    );
+  }
   
-//   const person1Deets = printDeets.bind(person1);
+  const person1Deets = printDeets.bind(person1);
   
-//   person1Deets();
-  //hey im Wallie Raihan, and im a developer, im also from yemen
-  
-  
+  person1Deets();
+//   hey im Wallie Raihan, and im a developer, im also from yemen
   
   ///Another example
   
@@ -80,3 +78,18 @@ catDeets()
 const catDeets2 = catDetails.bind(this, cat1.color, cat2.catType)
 
 catDeets2();
+
+
+//arrow functions
+
+
+const sayFullName = () =>console.log('Wayel Raihan');
+
+
+// sayFullName('Wayel Raihan');
+
+function useOtherFunction(fn){
+    fn();
+};
+
+useOtherFunction(sayFullName);
