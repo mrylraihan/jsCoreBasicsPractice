@@ -28,9 +28,6 @@ printCoordinates.call(c2);
 printCoordinates.apply(c1);
 printCoordinates.apply(c2);
 
-window.x = 2;
-window.y = 3;
-printCoordinates();
 
 //<------------------------------>
 
