@@ -1,4 +1,4 @@
-//the difference between call() aplly() and bind()
+//the difference between call() apply() and bind()
 //without strict mode 'this' will default to the global window object
 //'use strict mode'
 
