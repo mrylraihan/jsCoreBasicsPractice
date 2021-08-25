@@ -3,8 +3,8 @@ const person1 ={
     lName: 'Raihan'
 };
 
-const printFirst = function(){
-    return this.fName;
+const printFirst = function(a){
+    return this.fName + " "+ a;
 }
 
 const printLast = function(){
@@ -17,7 +17,7 @@ function printfull(f, l){
     const last = l();
     return `${first} ${last}`;
 }
-
-const fullName= printfull(printFirst.bind(person1),printLast.bind(person1))
+                                    //.bind(object,1parm , 2parm)
+const fullName= printfull(printFirst.bind(person1, 'ali'),printLast.bind(person1))
 
 console.log(fullName);
