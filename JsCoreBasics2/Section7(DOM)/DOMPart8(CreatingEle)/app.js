@@ -35,8 +35,7 @@ btnitem.addEventListener('click',()=>{
   ul.insertAdjacentHTML('beforeend',`<li> item ${++liNum}`);
   lastli = document.querySelector('li:last-of-type');
   lastli.onclick = ()=>{alert('last li!')}
+  div.insertAdjacentHTML('beforeend', '<h2>hey</h2>');
 })
 lastli.onclick = ()=>{alert('last li!')}
 
-
-div.insertAdjacentHTML('beforeend', '<h2>hey</h2>');
