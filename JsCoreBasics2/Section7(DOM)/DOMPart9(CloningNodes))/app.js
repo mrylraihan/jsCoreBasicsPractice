@@ -26,18 +26,22 @@ btn1.addEventListener('click', ()=>{
   // h1.classList.toggle('visible');
   h1.classList.toggle('invisible');
 })
-lastli = document.querySelector('li:last-of-type');
+lastli = document.querySelector('ul').lastElementChild;
 let liNum = liList.length
+console.log(lastli);
+// lastli.onclick = ()=>{alert('last li!')}
+
 btnitem.addEventListener('click',()=>{
   
   // ul.innerHTML += `<li> item ${++liNum}`;
   //or
   ul.insertAdjacentHTML('beforeend',`<li> item ${++liNum}`);
-  lastli = document.querySelector('li:last-of-type');
-  lastli.onclick = ()=>{alert('last li!')}
   div.insertAdjacentHTML('beforeend', '<h2>hey</h2>');
+  lastli = document.querySelector('ul').lastElementChild;
+  lastli.onclick = ()=>{alert('last li!')}
+ console.log(lastli);
 })
-lastli.onclick = ()=>{alert('last li!')}
+
 
 //creating elements
 const newP = document.createElement('p')
@@ -54,17 +58,16 @@ newH1.style.color = 'black';
 newP.insertAdjacentElement('afterend', newH1);//inserting the element 
 //in insertAdjacentElement('position', element)
 const otherLI = document.createElement('li')
-newH1.appendChild(otherLI)//adds after
-otherLI.append('another li')//adds next too
+newH1.lastChild.before(otherLI)//adds after
+otherLI.textContent='another li';
 
-// more practice
+// cloning Nodes
+const clonedLI = otherLI.cloneNode(true);//true allows you to clone everything from text to styles
+//false is only the tag no nested elements
+clonedLI.textContent += ' cloned';
+ul.append(otherLI, clonedLI)
 
-const newerLi = document.createElement('li');
-newerLi.textContent = 'another item';
 
-ul. prepend(newerLi);
-ul.lastElementChild.before(newerLi);//locates the element and adds before it, 
-//can do the same with .after
+//removing nodes
 
-//we can also do .replace
-ul.firstElementChild.replaceWith('hello')
+// ul.parentElement.removeChild(ul);
