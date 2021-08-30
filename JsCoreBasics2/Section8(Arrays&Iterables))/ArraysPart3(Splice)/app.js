@@ -37,3 +37,7 @@ console.log(hobbies);//(7) ["Cooking", "Running", "Sports", "intheMiddle", "com
 
 hobbies.splice(-1,1);//this will start at the end and move left 1 time removing 'Eating'
 console.log(hobbies);//(6) ["Cooking", "Running", "Sports", "intheMiddle", "computers", "Walking"]
+
+
+//Splice method is only avaiable for real arrays this is an example of when you would want 
+//to convert an iterable or aarylike object to an array with the Array.from() method
