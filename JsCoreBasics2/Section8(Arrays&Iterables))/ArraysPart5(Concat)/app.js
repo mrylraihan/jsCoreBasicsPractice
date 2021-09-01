@@ -17,5 +17,3 @@ console.log(newTestResults);//(9) [1, 2, 3, 4, 5, 6, 7, 8, 9]
 const newTestResults2 = newTestResults.concat(10,11);//This adds the elements to the end and 
 //returns the new array with the added elements
 console.log(newTestResults2);
-
-
