@@ -27,3 +27,5 @@ console.log(objectList.indexOf(person2));//this will log index 1 because it has 
 
 const personalData = [{name:'wallie'},{age:29}];
 console.log(personalData.indexOf(name));// this will log -1 because it wont be able to find an object with out an reference 
+
+//this is how we find the index of a specific item
