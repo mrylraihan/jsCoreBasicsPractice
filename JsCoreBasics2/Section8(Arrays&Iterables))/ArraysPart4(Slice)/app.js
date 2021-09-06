@@ -1,4 +1,4 @@
-//Slice method that allows you to create a copy of an array with copying the reference pointer
+//Slice method that allows you to create a copy of an array without copying the reference pointer
 //essentially creating a new copy of the array or array like object 
 //.slice() will copy the whole array
 //,slice(_,_) will allow you to select certian ranges of an array  
@@ -30,6 +30,4 @@ console.log(just2Ele);//(2) [1, 2]
 
 //we can do this in reverse with negative values
 const revserElements = storedResults.slice(-2,-1);//-2 starts at is starting from the end and lands on 7, -1 just means one to the left  
-console.log(revserElements);[7]
-
-
+console.log(revserElements);//[7]

@@ -7,8 +7,8 @@ const hobbies = ['Cooking', 'Sports', 'Farming','Walking','Eating'];
 hobbies.splice(2,1,'computers');
 console.log(hobbies);//["Cooking", "Sports", "computers", "Walking", "Eating"]
 
-//or you can use splice to add in the middle with out replaceing 
-//this is simply picking the index you want to start at, and by put 0 in the second paremeter
+//or you can use splice to add in the middle with out replacing 
+//this is simply picking the index you want to start at, and by put 0 in the second parameter
 //states you amount of elements you want to remove which is 0 
 //the parameter you can add as many elements as you want
 hobbies.splice(2,0,'intheMiddle');
@@ -25,7 +25,7 @@ hobbies.splice(2,1);//this is saying start at index 2 which is "Climbing" and re
 console.log(hobbies);//(7) ["Cooking", "Running", "Sports", "intheMiddle", "computers", "Walking", "Eating"]
 
 
-// hobbies.splice(0);//this will remove everthing
+// hobbies.splice(0);//this will remove everything
 // console.log(hobbies);//[]
 
 //if you want to delete everything after a specific element you would only put in the 
@@ -39,5 +39,5 @@ hobbies.splice(-1,1);//this will start at the end and move left 1 time removing 
 console.log(hobbies);//(6) ["Cooking", "Running", "Sports", "intheMiddle", "computers", "Walking"]
 
 
-//Splice method is only avaiable for real arrays this is an example of when you would want 
-//to convert an iterable or aarylike object to an array with the Array.from() method
+//Splice method is only available for real arrays this is an example of when you would want 
+//to convert an iterable or array like object to an array with the Array.from() method
