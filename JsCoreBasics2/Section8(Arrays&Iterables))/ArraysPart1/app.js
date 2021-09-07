@@ -34,7 +34,7 @@ const str = 'hello';
 const letters = Array.from(str);//this cant take multiple paramters, or numbers
 //Array.from allows you to pass in a iterable or an array like object 
 //and converts its to a new array 
-console.log(letters);(5) ["h", "e", "l", "l", "o"]
+console.log(letters);//(5) ["h", "e", "l", "l", "o"]
 
 const lis = document.querySelectorAll('li');
 const itemList = Array.from(lis);

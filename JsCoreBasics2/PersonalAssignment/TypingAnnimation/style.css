@@ -1,17 +1,19 @@
-#stuff{
-    animation: type 4s steps(26);
+body{
+     font-family: monospace;
+}
+.stuff{
+    /* animation: type 4s steps(20); */
     overflow: hidden;
     white-space: nowrap;
-    font-family: consolas;
     border-right: 4px solid black;
-    width: 26ch;
+    /* width: 20ch; */
 
 }
 @keyframes type {
     0%{
         width: 0ch;
     }
-    100%{
-        width:26ch ;
-    }
+    /* 100%{
+        width:20ch ;
+    } */
 }
