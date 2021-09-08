@@ -10,7 +10,6 @@ const letters = str.slice();
 console.log(letters);
 
 
-
 const testResult = [1,2,3,4,5,6,7];
 console.log(testResult);
 const storedResults = testResult.slice();//this is a way to copy and create a brand new array with out copying the reference 
@@ -31,3 +30,4 @@ console.log(just2Ele);//(2) [1, 2]
 //we can do this in reverse with negative values
 const revserElements = storedResults.slice(-2,-1);//-2 starts at is starting from the end and lands on 7, -1 just means one to the left  
 console.log(revserElements);//[7]
+
