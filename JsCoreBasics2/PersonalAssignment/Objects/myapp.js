@@ -14,7 +14,7 @@ const cat = {
   },
   sounds: function () {
     return "purring";
-  },
+  }
 };
 
 console.log(cat);

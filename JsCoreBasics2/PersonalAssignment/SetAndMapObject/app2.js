@@ -71,3 +71,35 @@ console.log(objectMap);//Map(3) {{…} => 'a', {…} => 'b', {…} => 'c'}
 //map also deletes by key for example
 objectMap.delete(c);
 console.log(objectMap);//Map(2) { {} => 'a', {} => 'b' }
+
+//-------------------------------------->
+
+const person = {name:'Wallie', age:29};
+const person2 = {name:'heshow', age:29};
+
+const personMap = new Map([[person, 'second twin'],[person2, 'first twin']]);
+console.log(personMap);
+//Map(2) {
+//   { name: 'Wallie', age: 29 } => 'second twin',
+//   { name: 'heshow', age: 29 } => 'first twin'
+// }
+
+const [wallie, heshow] = [...personMap];
+console.log(wallie);//[ { name: 'Wallie', age: 29 }, 'second twin' ]
+console.log(heshow);//[ { name: 'heshow', age: 29 }, 'first twin' ]
+
+console.log(wallie[1]);//second twin
+
+
+//----------------------------------------->
+//this is how we would and properties to objects 
+const myObj = {};
+console.log(myObj);//{} empty object
+
+const aa = {};
+const bb = {};
+const cc = {};
+myObj.aa = 'a';
+console.log(myObj.aa);//a
+myObj.bb = 'b';
+console.log(myObj);//{ aa: 'a', bb: 'b' }
