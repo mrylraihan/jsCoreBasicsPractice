@@ -18,9 +18,9 @@ mappedArray.set('Monkeys', 24);
 console.log(mappedArray);
 
 for (const key of mappedArray) {
-    console.log(key);// this will log each entry ['Zebra'=>5]and so on
+	console.log(key) // this will log each entry ['Zebra'=>5], ['Lion', 12], ['Monkeys', 24]
 }
 
 for (const [key, value] of mappedArray) {
-    console.log(key +":"+ value);//will log Zebra:5
+	console.log(key + ':' + value) //will log Zebra:5,Lion:12, Monkeys:24
 }
