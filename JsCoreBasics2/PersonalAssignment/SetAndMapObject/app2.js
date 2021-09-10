@@ -67,3 +67,7 @@ const objectMap = new Map([[a, 'a'], [b, 'b']]);
 console.log(objectMap); //Map(2) {{…} => 'a', {…} => 'b'}
 objectMap.set(c, 'c')
 console.log(objectMap);//Map(3) {{…} => 'a', {…} => 'b', {…} => 'c'}
+
+//map also deletes by key for example
+objectMap.delete(c);
+console.log(objectMap);//Map(2) { {} => 'a', {} => 'b' }
