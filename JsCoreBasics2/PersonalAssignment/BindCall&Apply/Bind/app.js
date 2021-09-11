@@ -4,6 +4,17 @@
 //provided value, with a given sequence of arguments preceding any provided when the new
 //function is called.
 
+//let greet = function(a,b){
+//  return ` ${a} and {b} and this.name`
+//} 
+//          
+//const dostuff = greet.bind(Param1, Param2, Param3)
+//dostuff();//how u call a bind method 
+//Param1 is the object which this keyword will point to
+//Param2 will be the first parameter in this case a
+//Param3 will be the second parameter in this case b
+
+
 //example
 
 const person1 = {
