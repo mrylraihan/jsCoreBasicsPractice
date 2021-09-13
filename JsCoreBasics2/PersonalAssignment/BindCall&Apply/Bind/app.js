@@ -53,3 +53,8 @@ const myButton = {
 };
 
 myButton.click();//OK clicked
+
+const testButton = myButton.click;
+testButton();//undifined clicked
+const testButtonBind = myButton.click.bind(myButton)
+testButtonBind();//OK clicked
