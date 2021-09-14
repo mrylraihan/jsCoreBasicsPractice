@@ -1,23 +1,63 @@
+const addMovieBtn = document.getElementById('add-movie-btn');
+const searchBtn = document.getElementById('search-btn');
+
+const movies = [];
+
+const renderMovies = (filter = '')=>{
 const movieList = document.getElementById('movie-list');
 
-movieList.style['background-color'] = 'blue';
-movieList.style.display = 'block';
+if(movies.length === 0){
+  movieList.classList.remove('visible');
+}else{
+  movieList.classList.add('visible');
+}
+movieList.innerHTML = '';
 
-let person = {
-  'first name': 'Max',
-  age: 30,
-  hobbies: ['Sports', 'Cooking'],
-  greet: function() {
-    alert('Hi there!');
-  }
+const filterMovies = !filter ? movies :movies.filter(movie => movie.info.title.includes(filter));
+
+filterMovies.forEach(movie => {
+	const movieEl = document.createElement('li')
+  const {info, ...otherProps} = movie;
+  console.log(otherProps);
+  const {title: movieTitle} = info
+	let text = movieTitle + ' - '
+	for (const key in info) {
+		if (key !== 'title') {
+			text += `${key}: ${info[key]}`
+		}
+	}
+	movieEl.textContent = text
+	movieList.append(movieEl)
+})
 };
 
-// ...
+const addMovieHandler = ()=>{
+  const title = document.getElementById('title').value;
+  const extraName = document.getElementById('extra-name').value;
+  const extraValue = document.getElementById('extra-value').value;
 
-// person.age = 31;
-delete person.age;
-// person.age = undefined;
-// person.age = null;
-person.isAdmin = true;
+  if(title.trim() === ''|| extraName.trim() === ''|| extraValue.trim() === ''){//checks if values are empty
+return ;//if they are empty just to return and dont do anything 
+  }
+const newMovie = {
+  info:{
+    //title , if the key and value are the same you can just write it once
+    title: title,
+    [extraName]: extraValue
+  }, 
+  id: Math.random().toString()
+};
 
-console.log(person['first name']);
+movies.push(newMovie)
+// console.log(newMovie);
+console.log(movies);
+renderMovies();
+};
+
+const searchMovieHandler =()=>{
+  const filterTerm = document.getElementById('filter-title').value;
+  renderMovies(filterTerm)
+};
+
+addMovieBtn.addEventListener('click', addMovieHandler);
+searchBtn.addEventListener('click', searchMovieHandler);
