@@ -33,6 +33,7 @@ const setSecretSantaHandler = ()=> {
     
     const rdmList1 = []
     const rdmList2 = [] 
+	// make function 
 		while (rdmList1.length < secretSantaList.length) {
 			let rn = Math.floor(Math.random() * secretSantaList.length)
 			if (rdmList1.indexOf(rn) === -1) rdmList1.push(rn)
@@ -43,6 +44,8 @@ const setSecretSantaHandler = ()=> {
 				}
 		console.log(rdmList1,rdmList2)
      newSSCopy = secretSantaList.map((v,idx)=>{
+		 //add condtional here
+		 //make an array and use include for conditional, and push;
         return v+' has '+ secretSantaList[rdmList1[idx]] + ',and ' + secretSantaList[rdmList2[idx]];
     })
 	console.log(rdmList1);

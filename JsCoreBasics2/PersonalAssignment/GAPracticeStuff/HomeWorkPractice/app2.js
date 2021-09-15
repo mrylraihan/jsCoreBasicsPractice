@@ -23,4 +23,4 @@ function betweenInd(a, stop1, b, stop2) {
     const newSt3 = Math.sign(st3)===-1 ? st3*=-1 : st3 
      console.log(newSt3);
 }
-betweenInd(Red, 'South Station', Green, 'Government Center')
+betweenInd(Green, 'Government Center', Orange, 'Chinatown');
