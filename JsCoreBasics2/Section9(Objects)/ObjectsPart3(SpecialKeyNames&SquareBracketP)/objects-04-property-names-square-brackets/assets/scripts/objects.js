@@ -16,18 +16,20 @@ movieList.innerHTML = '';
 const filterMovies = !filter ? movies :movies.filter(movie => movie.info.title.includes(filter));
 
 filterMovies.forEach(movie => {
-	const movieEl = document.createElement('li')
+	const movieEl = document.createElement('li');
   const {info, ...otherProps} = movie;
   console.log(otherProps);
-  const {title: movieTitle} = info
-	let text = movieTitle + ' - '
+  // const {title: movieTitle} = info;
+  let {getFormattedTitle} = movie;
+  // getFormattedTitle = getFormattedTitle.bind(movie)//instead of bind we could use call or apply 
+	let text = getFormattedTitle.call(movie) + ' - ';
 	for (const key in info) {
 		if (key !== 'title') {
-			text += `${key}: ${info[key]}`
+			text += `${key}: ${info[key]}`;
 		}
 	}
-	movieEl.textContent = text
-	movieList.append(movieEl)
+	movieEl.textContent = text;
+	movieList.append(movieEl);
 })
 };
 
@@ -45,7 +47,10 @@ const newMovie = {
     title: title,
     [extraName]: extraValue
   }, 
-  id: Math.random().toString()
+  id: Math.random().toString(), 
+  getFormattedTitle() {
+    return this.info.title.toUpperCase();
+  }
 };
 
 movies.push(newMovie)

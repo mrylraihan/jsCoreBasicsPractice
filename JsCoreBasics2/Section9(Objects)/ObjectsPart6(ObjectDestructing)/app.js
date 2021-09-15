@@ -43,3 +43,18 @@ function catDestructuring({eat, loves}) {// in the parameters we ad the curly br
 }
 
 catDestructuring(cat)//the cat loves to sleep, and food
+
+//How to check if an object has a property
+
+if('eat' in cat){// put the property in a string and use in and the objectName
+    console.log(true);
+}else{
+    console.log(false);
+};
+//true
+
+//if statment with out curlybraces
+if('fart' in cat)console.log(true);
+else console.log(false);
+//false
+

@@ -142,3 +142,14 @@ let wallie = ['w', 'a', 'l', 'y'];
 let w = wallie.splice(0,1,'m');
 console.log(wallie);
 console.log(w);
+
+
+//Sorting arrays
+const arrayNum = [3, 5, 6, 2, 6, 1, 11]
+console.log(arrayNum.sort((a, b) => a - b))//for numbers you need to pass this in because
+//you will have issues with 1 and 11 it will look like this (7) [1, 11, 2, 3, 5, 6, 6] 
+//(7) [1, 2, 3, 5, 6, 6, 11] 
+
+const arrayL = ['W','w','a', 'b', 'm', 'A']
+console.log(arrayL.sort());//(6) ['A', 'W', 'a', 'b', 'm', 'w']
+//with chars you dont need to too, or strings 
