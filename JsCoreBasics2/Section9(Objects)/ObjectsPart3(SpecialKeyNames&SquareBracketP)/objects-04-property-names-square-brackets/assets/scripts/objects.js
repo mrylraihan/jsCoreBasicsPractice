@@ -24,7 +24,7 @@ filterMovies.forEach(movie => {
   // getFormattedTitle = getFormattedTitle.bind(movie)//instead of bind we could use call or apply 
 	let text = getFormattedTitle.call(movie) + ' - ';
 	for (const key in info) {
-		if (key !== 'title') {
+		if (key !== 'title'&& key !== '_title') {
 			text += `${key}: ${info[key]}`;
 		}
 	}
@@ -38,13 +38,22 @@ const addMovieHandler = ()=>{
   const extraName = document.getElementById('extra-name').value;
   const extraValue = document.getElementById('extra-value').value;
 
-  if(title.trim() === ''|| extraName.trim() === ''|| extraValue.trim() === ''){//checks if values are empty
+  if(extraName.trim() === ''|| extraValue.trim() === ''){//checks if values are empty
 return ;//if they are empty just to return and dont do anything 
   }
 const newMovie = {
   info:{
     //title , if the key and value are the same you can just write it once
-    title: title,
+   set title(val){
+     if(val.trim()=== ''){
+       this._title = "DEFAULT";
+       return;
+     }
+     this._title = val;
+   },
+    get title(){
+      return this._title;
+    },
     [extraName]: extraValue
   }, 
   id: Math.random().toString(), 
@@ -52,6 +61,9 @@ const newMovie = {
     return this.info.title.toUpperCase();
   }
 };
+
+newMovie.info.title = title;
+console.log(newMovie.info.title);
 
 movies.push(newMovie)
 // console.log(newMovie);
