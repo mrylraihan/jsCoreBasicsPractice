@@ -1,15 +1,15 @@
 //pillow
 const jordan1RImg =
-	'https://cdn.shopify.com/s/files/1/0473/6965/0340/products/f54393e84313ebd848f3ace132c9dd953e691f6a_Nike_Air_Jordan_1_Mid_Banned_Black__Gym_Red__White_554724_074_2_480x480_crop_center.jpg?v=1629512260'
+'https://cdn.shopify.com/s/files/1/0473/6965/0340/products/f54393e84313ebd848f3ace132c9dd953e691f6a_Nike_Air_Jordan_1_Mid_Banned_Black__Gym_Red__White_554724_074_2_480x480_crop_center.jpg?v=1629512260'
 const jordan1IMG =
-	'https://cdn.shopify.com/s/files/1/0705/8373/products/Lace_Lab_-_Sail_Jordan_1_Replacement_Laces_600x.jpg?v=1591991124'
+'https://cdn.shopify.com/s/files/1/0705/8373/products/Lace_Lab_-_Sail_Jordan_1_Replacement_Laces_600x.jpg?v=1591991124'
 
 class Product {
 	title = 'DEFAULT'
 	imageUrl
 	description
 	price
-
+	
 	constructor(title, image, desc, price) {
 		this.title = title
 		this.imageUrl = image
@@ -18,116 +18,154 @@ class Product {
 	}
 }
 
-class ProductList {
-	products = [
-		new Product(
-			'Jordan 1 reds',
-			jordan1RImg,
-			'Made with human real hair!',
-			2000.99
-		),
-		new Product(
-			'Jordan 1 blues',
-			jordan1IMG,
-			'the Last shoe Jordan Himself wore',
-			1999.54
-		),
-	]
-
-	constructor() {}
-
-	render() {
-		const prodList = document.createElement('ul')
-		prodList.className = 'product-list'
-		for (const prod of this.products) {
-			const productItem = new ProductItem(prod)
-			const prodEl = productItem.render()
-			prodList.append(prodEl)
+class Component {
+	constructor(renderHookId, shouldRender = true){
+		this.hookId = renderHookId;
+		if (shouldRender) {
+			this.render();
 		}
-		return prodList
+			
+	}
+	render(){};
+
+	createRootElement(tag,cssClasses, attributes){
+		const rootElement = document.createElement(tag);
+		if (cssClasses) {
+			rootElement.className = cssClasses;
+		}
+		if (attributes && attributes.length > 0) {
+			for (const attr of attributes) {
+				rootElement.setAttribute(attr.name, attr.value);
+			}
+		}
+		document.getElementById(this.hookId).append(rootElement);
+		return rootElement;
 	}
 }
-class ShoppingCart {
-	items = [];
+class ProductList extends Component{
+	products = [];
 
-	set cartItems(value){
-	this.items = value;
-	this.totalOutput.innerHTML = `<h2>Total: \$${this.totalAmount.toFixed(2)}</h2>`
+	constructor(renderHookId) {
+		super(renderHookId);
+		this.fetchProducts()
+	}
+	fetchProducts(){
+		this.products = [
+			new Product(
+				'Jordan 1 reds',
+				jordan1RImg,
+				'Made with human real hair!',
+				2000.99
+			),
+			new Product(
+				'Jordan 1 blues',
+				jordan1IMG,
+				'the Last shoe Jordan Himself wore',
+				1999.54
+			),
+		];
+		this.renderProducts();
+	}
+	renderProducts(){
+		for (const prod of this.products) {
+			new ProductItem(prod, 'prod-list')
+		}
 
 	}
+	render() {
+		this.createRootElement('ul', 'product-list',[new ElementAttribute('id','prod-list')])
+		if (this.products && this.products.length > 0) {
+			this.renderProducts();
+		}
+	}
+}
+class ElementAttribute{
+	constructor(attrName, attrValue){
+		this.name = attrName;
+		this.value = attrValue;
+	}
+}
 
+
+class ShoppingCart extends Component{
+	items = [];
+	
+	set cartItems(value){
+		this.items = value;
+		this.totalOutput.innerHTML = `<h2>Total: \$${this.totalAmount.toFixed(2)}</h2>`
+		
+	}
+	
 	get totalAmount(){
 		const sum =this.items.reduce((preV, curItem)=>preV + curItem.price,0)
 		return sum;
 	}
+	
+	constructor(renderHookId){
+		super(renderHookId);
+	}
+	
+	
 	addProduct(product){
 		const updatedItems = [...this.items];
 		updatedItems.push(product);
 		this.cartItems = updatedItems;
 	}
-
+	
 	render() {
-		const cartEl = document.createElement('section')
+		const cartEl = this.createRootElement('section', 'cart')
 		cartEl.innerHTML = `
 		<h2>Total: \$${0}</h2>
 		<button>Order Now!</button>
-		`
-		cartEl.className = 'cart'
+		`;
 		this.totalOutput = cartEl.querySelector('h2');
-		return cartEl
 	}
 }
-class ProductItem {
-	constructor(product) {
-		this.product = product
+class ProductItem extends Component{
+	constructor(product, renderHookId) {
+		super(renderHookId,false)
+		this.product = product;
+		this.render();
 	}
-
+	
 	addToCart() {
-	 App.addProductToCart(this.product)
-
+		App.addProductToCart(this.product)
+		
 	}
-
+	
 	render() {
-		const prodEl = document.createElement('li')
-		prodEl.className = 'product-item'
+		const prodEl = this.createRootElement('li','product-item');
 		prodEl.innerHTML = `
-				<div>
-				<img src="${this.product.imageUrl}" alt="${this.product.title}">
-				<div class = "product-item__content">
-				<h2>${this.product.title}</h2>
-				<h3>$${this.product.price}</h3>
-				<p>${this.product.description}</p>
-				<button>ADD to Cart</button>
-				</div>
-				</div>
-				`
+		<div>
+		<img src="${this.product.imageUrl}" alt="${this.product.title}">
+		<div class = "product-item__content">
+		<h2>${this.product.title}</h2>
+		<h3>$${this.product.price}</h3>
+		<p>${this.product.description}</p>
+		<button>ADD to Cart</button>
+		</div>
+		</div>
+		`
 		const addCartButton = prodEl.querySelector('button')
 		addCartButton.addEventListener('click', this.addToCart.bind(this))
-		return prodEl
 	}
 }
 
-class Shop {
-
-
+class Shop extends Component{
+	constructor(){
+		super();
+	}
 	render() {
-		const renderHook = document.getElementById('app')
-		this.cart = new ShoppingCart()
-		const cartEl = this.cart.render()
-		const productList = new ProductList()
-		const prodListEl = productList.render()
-
-		renderHook.append(cartEl)
-		renderHook.append(prodListEl)
+		this.cart = new ShoppingCart('app')
+		new ProductList('app')
 	}
 }
 
 class App {
 	static cart;
-
+	
 	static init(){
 		const shop = new Shop();
-		shop.render();
 		this.cart = shop.cart;
 	}
 	static addProductToCart(product){

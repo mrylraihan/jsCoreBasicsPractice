@@ -15,7 +15,7 @@ class MyClass1 {
 }
 
 const instanceOfMyClass1 = new MyClass1('Wallie', 29)
-console.log(instanceOfMyClass1.name) //wallie
+console.log(instanceOfMyClass1.name) //Wallie
 console.log(instanceOfMyClass1) //MyClass1 {name_: Array(1), name: 'Wallie', age: 29}
 instanceOfMyClass1.names = 'Max'
 console.log(instanceOfMyClass1.names) //Max
