@@ -1,0 +1,62 @@
+/* css variables */
+/* root psuedo selector */
+:root{
+    /* put variables in here */
+    /* variables start with -- */
+    --dark-gray:#45484D;
+    --dark-white:#E9EDE7;
+    --bright-white: #FFFFFF;
+}
+/* when your targeting more general elements start it at the top */
+body{
+    font-family: Helvetica, sans-serif;
+    color: var(--dark-gray);
+    background-color: var(--dark-white);
+    margin: 0;
+}
+/* this class will use flex box to center anything that is applies */
+.center{
+    /* set display to flexbox-- so we can use them in our children */
+    display: flex;
+    /* Center content using flexbox */
+    justify-content: center;
+}
+
+.large-Btn{
+    padding: .5rem 4rem;
+    background-color: var(--bright-white);
+    border:.1rem solid var(--dark-gray) ;
+    font-size: .75rem;
+}
+/* you cant shrink an img from the div its in, you have to target the img its self */
+.img-container{
+    position: relative;
+    padding: 3rem;
+}
+
+.img-container > img{
+width: 30rem;
+height: 20rem;
+}
+
+.img-container > h3{
+    position: absolute;
+    font-size: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: var(--bright-white);
+}
+
+/* .wf-black{
+    border: .3rem solid black;
+}
+.wf-green{
+    border: .3rem solid green
+}
+.wf-yellow{
+    border: .3rm solid yellow;
+}
+.wf-blue{
+    border: .3rem solid lightblue
+} */
