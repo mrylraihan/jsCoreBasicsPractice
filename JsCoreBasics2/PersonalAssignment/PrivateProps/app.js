@@ -20,3 +20,10 @@ class MyPrivateCount{
 const count2 = new MyPrivateCount();
 // console.log(count2.#count);//undefined
 console.log(count2.count);//30 accessed by the getter method
+
+for (const key in count1) {
+	console.log(key + ' ' + count1[key]) //count 20
+}
+for (const key in count2) {
+	console.log(key + ' ' + count1[key]) //nothing will print out because the property is private
+}

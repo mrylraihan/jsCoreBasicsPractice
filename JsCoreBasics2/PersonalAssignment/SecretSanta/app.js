@@ -14,6 +14,7 @@ const gettingUserInput = () => {
     secretSantaList.push(userInputValue)
     console.log(secretSantaList);
 	userInput.value = ''
+	//turn this under to a seperate function to render and better class Names
 	const listofH1 = document.querySelectorAll('h1')
 	listofH1[listofH1.length - 1].classList.remove('stuff')
 	let secondH1 = document.createElement('h1')
@@ -40,7 +41,7 @@ const setSecretSantaHandler = ()=> {
 		}
         while (rdmList2.length < secretSantaList.length) {
 					let rn = Math.floor(Math.random() * secretSantaList.length)
-					if (rdmList2.indexOf(rn) === -1) rdmList2.push(rn)
+					if ((rdmList2.indexOf(rn) === -1)) rdmList2.push(rn)
 				}
 		console.log(rdmList1,rdmList2)
      newSSCopy = secretSantaList.map((v,idx)=>{
@@ -52,6 +53,8 @@ const setSecretSantaHandler = ()=> {
 	console.log(rdmList2);
     console.log(newSSCopy);
 }
-
+const array= ["cat", 'Dog',1]
+console.log(array.indexOf());
+console.log(array[1]);
 
 ssbtn.addEventListener('click', setSecretSantaHandler)
