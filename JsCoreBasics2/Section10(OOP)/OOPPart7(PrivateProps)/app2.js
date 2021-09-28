@@ -36,3 +36,20 @@ console.log(childCount1.name);//wallie
 console.log(childCount1);//ChildCounter {name: 'wallie', #count: 30}
 console.log(count2.name);//undefined
 //parents dont have access to child props
+
+
+class NewPrivateClass{
+    #num = 20;
+    get num(){
+        return this.#num
+    }
+    set num(val){
+        return this.#num = val;
+    }
+}
+
+const newPrivateInstance = new NewPrivateClass();
+console.log(newPrivateInstance);//NewPrivateClass {#num: undefined}
+// console.log(newPrivateInstance.#count);//Error
+newPrivateInstance.num = 30;// you can set a private pros value with the set method 
+console.log(newPrivateInstance.num);//30
