@@ -3,7 +3,7 @@
 // import { double, name } from './ultis.js';
 // import { double as utlisDouble, name } from './ultis.js'
 //or if you have alot of imports you can use the *
-import * as ultisClass from './ultis.js'
+import * as ultisClass from './ultis.js';
 import sayN from './default.js';
 
 

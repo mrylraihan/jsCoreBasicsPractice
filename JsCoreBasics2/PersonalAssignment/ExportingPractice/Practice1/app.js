@@ -21,7 +21,7 @@ const whichSuperHero = ()=>{
 }
 
 const showSuperHero = ()=>{
-    const batmanReturn = batman.whoAmI()
+  const batmanReturn = batman.whoAmI()
   const p = document.createElement('p')
   const tex = document.createTextNode(`${batmanReturn}`)
   p.appendChild(tex);

@@ -1,5 +1,5 @@
 /*
-With if else conditoionals you cant store the result for example 
+With if else conditionals you cant store the result for example 
 
 const userName = if(isLogin){
     return 'Max';
