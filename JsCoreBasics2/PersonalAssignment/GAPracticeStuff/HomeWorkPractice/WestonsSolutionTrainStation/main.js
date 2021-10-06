@@ -1,3 +1,2 @@
-import {hello} from './app.js'
-
-hello();
+// import {hello} from './app.js'
+// hello();
