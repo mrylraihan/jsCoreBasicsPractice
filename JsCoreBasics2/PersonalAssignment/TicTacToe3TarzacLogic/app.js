@@ -12,8 +12,10 @@ const sq7 = document.getElementById('sq7')
 const sq8 = document.getElementById('sq8')
 const sq9 = document.getElementById('sq9')
 
-// boxes = Array.from(boxes)
-let complete = false
+const board = [sq1, sq2, sq3, sq4, sq5, sq6, sq7, sq8, sq9]
+
+let complete = false;
+
 // counter when ever this function is Invoked count increases by 1  
 let count = 0
 console.log(count)
@@ -56,46 +58,50 @@ startBtn.addEventListener('click',()=>{
 		
 })
 
+//"" = empty 
+//"x" = x tile
+//"o" = o tile
+const winConfig = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+]
+//returns empty string if there is no winner and returns "x" or "o" if there is a winner
+
 function checkWinner() {
-	if (
-		(sq1.innerText === 'x' && sq2.innerText === 'x' && sq3.innerText === 'x') ||
-		(sq4.innerText === 'x' && sq5.innerText === 'x' && sq6.innerText === 'x') ||
-		(sq7.innerText === 'x' && sq8.innerText === 'x' && sq9.innerText === 'x') ||
-		(sq1.innerText === 'x' && sq5.innerText === 'x' && sq9.innerText === 'x') ||
-		(sq7.innerText === 'x' && sq5.innerText === 'x' && sq3.innerText === 'x') ||
-		(sq1.innerText === 'x' && sq4.innerText === 'x' && sq7.innerText === 'x') ||
-		(sq2.innerText === 'x' && sq5.innerText === 'x' && sq8.innerText === 'x') ||
-		(sq3.innerText === 'x' && sq6.innerText === 'x' && sq9.innerText === 'x')
-		){
-			console.log('X is the winner')
-			console.log(count);
-			complete = true
-		
-	} else if (
-		(sq1.innerText === 'o' && sq2.innerText === 'o' && sq3.innerText === 'o') ||
-		(sq4.innerText === 'o' && sq5.innerText === 'o' && sq6.innerText === 'o') ||
-		(sq7.innerText === 'o' && sq8.innerText === 'o' && sq9.innerText === 'o') ||
-		(sq1.innerText === 'o' && sq5.innerText === 'o' && sq9.innerText === 'o') ||
-		(sq7.innerText === 'o' && sq5.innerText === 'o' && sq3.innerText === 'o') ||
-		(sq1.innerText === 'o' && sq4.innerText === 'o' && sq7.innerText === 'o') ||
-		(sq2.innerText === 'o' && sq5.innerText === 'o' && sq8.innerText === 'o') ||
-		(sq3.innerText === 'o' && sq6.innerText === 'o' && sq9.innerText === 'o')
-	){
-		console.log('O is the winner');
-		console.log(count)
+	if (count< 4) {
+	return
+	}
+
+	
+	for (let idx = 0; idx < 8; idx++) {
+		if (
+			board[winConfig[idx][0]].innerText === board[winConfig[idx][1]].innerText &&
+			board[winConfig[idx][1]].innerText === board[winConfig[idx][2]].innerText &&
+			board[winConfig[idx][2]].innerText === board[winConfig[idx][0]].innerText &&
+			board[winConfig[idx][0]].innerText != ''
+			) {
+				// return board[winConfig[idx][0]]
+				console.log(board[winConfig[idx][0]].innerText , ' is the winner')
+				complete = true;
+				return 
+			}
+			console.log(' ')
+	}
+
+	if (count === 8) {
 		complete = true
-		
-		
-	}else if(count === 8){
-		console.log('draw!');
-		console.log(count);
-		complete = true
-	}else {
-		console.log('no winner yet!')
-		console.log(count)
+		console.log('Draw!');
 	}
 	
 }
+
+
 function resetBoard() {
 	boxes.forEach(box => {
 		box.innerText = ''
