@@ -15,3 +15,14 @@ btn.addEventListener('click',()=>{
     })
 
 })
+
+
+
+let count = 0;
+console.log(count);
+function counting() {
+    count++;
+    return count;
+}
+counting();
+console.log(count);
