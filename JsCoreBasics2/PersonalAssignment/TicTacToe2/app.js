@@ -12,7 +12,7 @@ const sq7 = document.getElementById('sq7')
 const sq8 = document.getElementById('sq8')
 const sq9 = document.getElementById('sq9')
 
-boxes = Array.from(boxes)
+// boxes = Array.from(boxes)
 
 // counter when ever this function is Invoked count increases by 1  
 let count = 0
@@ -33,9 +33,12 @@ const whosTurn = (count) => {
 
 //passes in a square param and adds the X or O in to the text content of the html
 function changeXorO(sq) {
-    sq.textContent = whosTurn(count);
-	checkWinner();
-	return counting();
+	if (sq.innerText === '') {
+		sq.textContent = whosTurn(count);
+		checkWinner();
+		return counting();
+	}
+	
 }
 
 startBtn.addEventListener('click',()=>{
@@ -63,9 +66,10 @@ function checkWinner() {
 		(sq1.innerText === 'x' && sq4.innerText === 'x' && sq7.innerText === 'x') ||
 		(sq2.innerText === 'x' && sq5.innerText === 'x' && sq8.innerText === 'x') ||
 		(sq3.innerText === 'x' && sq6.innerText === 'x' && sq9.innerText === 'x')
-	){
-		console.log('X is the winner')
-		boxes.forEach(box=>box.removeEventListener('click', changeXorO))
+		){
+			console.log('X is the winner')
+			console.log(count);
+		
 	} else if (
 		(sq1.innerText === 'o' && sq2.innerText === 'o' && sq3.innerText === 'o') ||
 		(sq4.innerText === 'o' && sq5.innerText === 'o' && sq6.innerText === 'o') ||
@@ -77,19 +81,25 @@ function checkWinner() {
 		(sq3.innerText === 'o' && sq6.innerText === 'o' && sq9.innerText === 'o')
 	){
 		console.log('O is the winner');
-		removeEvent()
-	}else if(boxes.forEach(box=>box.innerText !="")){
-		console.log('its a draw')
-		removeEvent()
-	}else{
-		console.log('no winner yet!');
+		console.log(count)
+		
+		
+	}else if(count === 8){
+		console.log('draw!');
+		console.log(count);
+	}else {
+		console.log('no winner yet!')
+		console.log(count)
+	
 	}
+	
 }
-function removeEvent() {
+function resetBoard() {
 	boxes.forEach(box => {
-		box.removeEventListener('click', changeXorO)
 		box.innerText = ''
 		console.log('removed');
+		count = 0;
 	})
+return count;
 }
-resetBtn.addEventListener('click', removeEvent)
+resetBtn.addEventListener('click', resetBoard)
