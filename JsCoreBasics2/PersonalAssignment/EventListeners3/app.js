@@ -26,3 +26,4 @@ const bindedFuc = alertHi.bind(this)
 boxlist.forEach(box=>box.addEventListener('click', bindedFuc))
 
 boxlist[3].removeEventListener('click', ()=>{boxlist.forEach(box=>box.removeEventListener('click', bindedFuc))})
+

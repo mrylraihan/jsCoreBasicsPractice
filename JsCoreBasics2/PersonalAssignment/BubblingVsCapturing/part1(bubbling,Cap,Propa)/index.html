@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="app.js" defer></script>
+    <style>
+        body * {
+            margin: 10px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <form id="form">FORM Bubbling
+  <div id="div">DIV
+    <p id="p">P</p>
+    <p id="pSibling">P this p doesn't have an event listener so it will inherit fro its parent div and use that one as well, similarly to the button below</p>
+  </div>
+</form>
+<form id="form2">FORM Capture
+  <div id="div2">DIV
+    <p id="p2">P</p>
+  </div>
+</form>
+<form id="form3">FORM Stop Propagation
+  <div id="div3">DIV
+    <p id="p3">P</p>
+  </div>
+</form>
+
+<div id="mainDiv">
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+</div>
+
+</body>
+</html>
