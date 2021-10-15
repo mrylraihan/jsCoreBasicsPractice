@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1>Event Delegation</h1>
+    <hr noshade="none">
+    <p>Is a way you can add an event listener once for multiple elements with support for adding extra children</p>
+    <div>
+        <h3>this is using addEvent by running a loop!</h3>
+        <ul id="myList">
+            <li class="child">Apple</li>
+            <li class="child">Banana</li>
+            <li class="child">Tomato</li>
+            <li class="child">Tomato</li>
+            <li class="child">Tomato</li>           
+        </ul>
+        <h3>Event Delegation</h3>
+        <ul id="myList2">
+            <li class="child1">Apple</li>
+            <li class="child1">Banana</li>
+            <li class="child1">Tomato</li>
+            <li class="child1">Tomato</li>
+            <li class="child1">Tomato</li>
+        </ul>
+    </div>
+    </body>
+</html>

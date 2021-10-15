@@ -35,6 +35,7 @@ buttons[1].addEventListener('click', (event) => {
 // logged : in button
 //        
 divs[1].addEventListener('click', (event) => {
+
 	console.log('in div')
 })
 // logged : in div

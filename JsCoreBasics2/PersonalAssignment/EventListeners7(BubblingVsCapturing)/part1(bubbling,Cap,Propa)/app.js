@@ -40,3 +40,9 @@ p3.addEventListener('click', e => {
 const mainDiv = document.getElementById('mainDiv')
 
 mainDiv.addEventListener('click', ()=>console.log('i was clicked'))
+
+const buttonsInMainDiv= mainDiv.querySelectorAll('button')
+buttonsInMainDiv[3].addEventListener('click', ()=>console.log('with prop'))
+buttonsInMainDiv[4].addEventListener('click', e=>{
+    e.stopPropagation();
+    console.log('without prop')})
