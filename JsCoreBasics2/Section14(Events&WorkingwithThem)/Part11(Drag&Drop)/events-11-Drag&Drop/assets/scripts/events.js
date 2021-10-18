@@ -46,37 +46,27 @@ div.addEventListener('mouseenter', event => {
   console.log(event);
 });
 
-button.addEventListener('mouseenter', event => {
+button.addEventListener('click', function(event) {
   event.stopPropagation();
   console.log('CLICKED BUTTON');
   console.log(event);
+  console.log(this);
 });
 
 const listItems = document.querySelectorAll('li');
+const list = document.querySelector('ul');
 
 // listItems.forEach(listItem => {
-  //   listItem.addEventListener('click', event => {
-    //     event.target.classList.toggle('highlight');
-    //   });
-    // });
-    
-    
-    //or another way with the conditional
-    
-    // list.addEventListener('click', (event) => {
-      //   // console.log(event.currentTarget);
-      // 	// event.target.classList.toggle('highlight');
-      // 	if (event.target.matches('li')) {
-        //     event.target.classList.toggle('highlight');
-        // 	}
-        
-        // })
-        
-        
-const list = document.querySelector('ul');
-// adding the event to the ul and taking advantage of bubbling
-list.addEventListener('click', event => {
+//   listItem.addEventListener('click', event => {
+//     event.target.classList.toggle('highlight');
+//   });
+// });
+
+list.addEventListener('click', function(event) {
   // console.log(event.currentTarget);
   // event.target.classList.toggle('highlight');
   event.target.closest('li').classList.toggle('highlight');
+  // form.submit();
+  button.click();
+  console.log(this);
 });

@@ -17,7 +17,7 @@ const chb = document.getElementById('chb')
 function stopDefaultActions(event) {
     //if the box ix checked 
     if (!chb.checked) {
-        event.preventDefault()
+        event.preventDefault();
         console.log(event);
     }
 }

@@ -8,8 +8,8 @@ const boxlist = document.querySelectorAll('.box')
 // boxlist.forEach(box=>box.addEventListener('click', ()=> console.log(box.innerText)))
 // or
 
-const printInnerText = ()=>{
-    console.log(this.innerText);
+const printInnerText = (box)=>{
+    console.log(box.innerText);
 }
 
-boxlist.forEach(box=>box.addEventListener('click', printInnerText.bind(this)))
+boxlist.forEach(box=>box.addEventListener('click', printInnerText.bind(this,box)))
