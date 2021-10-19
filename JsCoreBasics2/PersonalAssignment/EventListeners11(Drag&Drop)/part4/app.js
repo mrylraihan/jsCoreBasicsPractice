@@ -10,7 +10,7 @@ function draggingElements(e) {
 swimmer.addEventListener('dragstart', draggingElements)
 
 
-const divs = document.querySelectorAll('.dropZone')
+const divs = document.querySelectorAll('.hishamsZone')
 
 for (const div of divs) {
 	//when a draggable element is over a zone
