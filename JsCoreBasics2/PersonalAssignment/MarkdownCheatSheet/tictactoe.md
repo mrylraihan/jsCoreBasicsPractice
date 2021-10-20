@@ -1,17 +1,15 @@
-## Wallies Tic Tac Toe Game planning
+# [ Wallies Tic Tac Toe Game planning](https://mrylraihan.github.io/Tic-Tac-Toe-Game/)
+#### click the title to start!
+---
+#### Instructions: 
 
-#### User Story: 
-
-* When user is at homepage, 
-   * as a user i want to be able to sign up/in/out
-   * as user once signed in should be able to start a game
-* as a User the board should display and allow the game to start 
-   * as a user what should be displayed is the board and reset game button
-* as a user i  want to click on the cell then an x or o placed there
-  * as a user One player should be x 
-  * as a user second player should be o
-* as a user be able o tell if they won, or its a draw 
-   * as a player you should know how many win did x or  o get
-* as a user you should be able to reset game
-
-Wallies Tic Tac Toe.jpg
+1. When user is at homepage, 
+   - User should sign up if its there first time
+   - then be able to Sign in
+   - Sign out when they are done
+2. Once signed in board should display and allow the game to start 
+   - User should press StartGame button to start tic tac toe game.
+   - To play game you must get three in a row in a colum, row, or across to win. Click on the box and to start, X is always first
+   - Winner should be displayed, once there is a winner click the reset button to play again
+3. One you are done playing
+      - you can Sign out to logout of the game.

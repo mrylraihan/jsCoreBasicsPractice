@@ -55,6 +55,6 @@ const myButton = {
 myButton.click();//OK clicked
 
 const testButton = myButton.click;
-testButton();//undifined clicked
+testButton();//undefined clicked
 const testButtonBind = myButton.click.bind(myButton)
 testButtonBind();//OK clicked

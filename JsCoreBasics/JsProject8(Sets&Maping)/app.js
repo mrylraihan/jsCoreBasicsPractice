@@ -47,7 +47,7 @@
 // for(const key of personData.keys()){
 //     console.log(keys);
 // }
-//for just teh values to be logged
+//for just the values to be logged
 // for(const value of personData.values()){
 //     console.log(value);
 // }
