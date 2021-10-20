@@ -35,6 +35,13 @@ function changeXorO(sq) {
 		return count++;
 	}
 }
+// function changeXorO(e) {
+// 	if (e.target.innerText === '' && complete === false) {
+// 		e.target.textContent = whosTurn(count)
+// 		checkWinner()
+// 		return count++
+// 	}
+// }
 function resetBoard() {
 	boxes.forEach((box) => {
 		result.innerText = '';
@@ -65,8 +72,10 @@ function checkWinner() {
 	}
 }
 
-startBtn.addEventListener('click',()=>{
-	boxes.forEach(sq=>sq.addEventListener('click', changeXorO.bind(this, sq)))	
+startBtn.addEventListener('click',(event)=>{
+	boxes.forEach(sq=>sq.addEventListener('click', changeXorO.bind(this, sq)))
+		//or
+	// boxes.forEach((sq) => sq.addEventListener('click', changeXorO))	 
 })
 	
 resetBtn.addEventListener('click', resetBoard)
