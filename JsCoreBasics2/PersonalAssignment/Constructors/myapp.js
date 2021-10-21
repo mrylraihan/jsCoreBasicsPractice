@@ -10,7 +10,7 @@ function Apple(color, score){
 }
 
 Apple.prototype = {
-  eatting : function(){return "eat the apple please";}, 
+  eating : function(){return "eat the apple please";}, 
   throwing :function(){console.log("throwing apple pits");console.log(this);}
 };
 
@@ -24,6 +24,7 @@ console.log(apple1);
 
 console.log(apple1.throw());
 apple1.throwing();
+apple1.eating();
 
 
 
