@@ -17,3 +17,4 @@ console.log(personDetails.call(person2, ...pdetails));//hey im Wallie, and im 30
 
 //apply
 console.log(personDetails.apply(person3, pdetails));// hey im wayel, and im 30 years old, i work as a Software Developer
+
