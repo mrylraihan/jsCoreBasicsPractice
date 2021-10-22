@@ -24,8 +24,8 @@ function createTaxCalculator() {
     return calculateTax;
 }
 
-const calculateValAmount = createTaxCalculator();
-const calculateIncomeAmount = createTaxCalculator(.25);
+const calculateValAmount = createTaxCalculator(0.19);
+const calculateIncomeAmount = createTaxCalculator(0.25);
 
 console.log(calculateValAmount(100));
 console.log(calculateIncomeAmount(200));
