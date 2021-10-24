@@ -1,7 +1,7 @@
-export const word = 'Wallie';
-export const array1 = [1,2,3,4,5];
+const word = 'Wallie';
+const array1 = [1,2,3,4,5];
 
-export class Hero{
+ class Hero{
     constructor(n, a, sp){
         this.name = n
         this.alius= a
@@ -14,5 +14,5 @@ export class Hero{
 }
 
 export{
-    Hero
+    Hero, word, array1
 }

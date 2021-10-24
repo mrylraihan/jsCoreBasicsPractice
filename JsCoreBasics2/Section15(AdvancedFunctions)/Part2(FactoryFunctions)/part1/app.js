@@ -17,15 +17,15 @@ console.log(incomeTax);//25
 
 //Factory function 
 
-function createTaxCalculator() {
+function createTaxCalculator(tax) {
     const calculateTax = amount=> {
-        return amount ;
+        return amount * tax;
     }
     return calculateTax;
 }
 
-const calculateValAmount = createTaxCalculator(0.19);
+const calculateValAmount = createTaxCalculator(0.19);//tax param
 const calculateIncomeAmount = createTaxCalculator(0.25);
 
-console.log(calculateValAmount(100));
+console.log(calculateValAmount(100));//amount param
 console.log(calculateIncomeAmount(200));

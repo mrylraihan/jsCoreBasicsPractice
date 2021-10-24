@@ -113,16 +113,19 @@ const nestedObj = {
 		talk: function () {
 			return this //still point to the object calling it
 		},
-		talkArrows: () => this //window,
-        ,
-        talkCB:function(){
-            testingCB(()=>console.log('talkCB', this))//points to the object
-        }
+		talkArrows: () => this, //window,
+		talkCB: function () {
+			testingCB(() => console.log('talkCB', this)) //points to the object
+		},
+		talkCBRegular: function () {
+			testingCB(function(){console.log('talkCBRegular', this)}) //points to the object
+		},
 	},
 }
 console.log(nestedObj.obj4.talk());//{name: 'obj4', talk: ƒ, talkArrows: ƒ}
 console.log(nestedObj.obj4.talkArrows.call(nestedObj));//window
 nestedObj.obj4.talkCB();//talkCB {name: 'obj4', talk: ƒ, talkArrows: ƒ, talkCB: ƒ}
+nestedObj.obj4.talkCBRegular()
 
 
 // ------------------------------------------------->
