@@ -32,3 +32,28 @@ function printFriends(person) {
 }
 
 console.log(printFriends(myself));
+
+
+
+// Factorial 
+
+
+function factorialsRecursive(n) {
+    if(n === 1){
+        return 1
+    }
+    return n * factorialsRecursive(n - 1)
+}
+
+console.log(factorialsRecursive(8))
+
+
+function regularFactorials(n) {
+    let result = 1
+    for (let i = n; i > 0;i--) {
+      result *= i
+    }
+    return result
+}
+
+console.log(regularFactorials(8))
