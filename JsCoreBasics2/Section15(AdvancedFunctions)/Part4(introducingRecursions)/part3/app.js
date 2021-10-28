@@ -47,7 +47,7 @@ function factorialsRecursive(n) {
 
 console.log(factorialsRecursive(8))
 
-
+// 8 * 8 * 8 * 8 * 8 * 8 * 8 * 8 
 function regularFactorials(n) {
     let result = 1
     for (let i = n; i > 0;i--) {

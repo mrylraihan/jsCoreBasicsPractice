@@ -19,11 +19,12 @@
 
 function powerOf(x, n) {
 	if (n === 1) {
-        console.log("n once its true: "+n, "x value once its true: "+ x);
 		console.log(n, x);
+        console.log("n once its true: "+n, "x value once its true: "+ x);
 		return x
 	}
     console.log(n, x)
+	console.log('n once its true: ' + n, 'x value once its true: ' + x)
 	return x * powerOf(x, n - 1)
     // return n === 1 ? x : x * powerOf(x, n - 1)
 }
