@@ -27,3 +27,14 @@ isAnnagram2('Name', 'AMNE');//this will log false because we split the string be
 isAnnagram2('name', 'eman');//this will log true because it is already lowercased
 
 //test
+
+function isAnnagram3(string) {
+    const stringArray = string.toLowerCase().split(',')
+    const string1 = stringArray[0].split('').sort().join('')
+    const string2 = stringArray[1].split('').sort().join('')
+    console.log(string1);
+    console.log(string2);
+    console.log(string1 === string2)
+}
+
+isAnnagram3('Wayel , wayle')

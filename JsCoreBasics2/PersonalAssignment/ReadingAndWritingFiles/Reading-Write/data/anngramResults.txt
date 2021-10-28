@@ -1,0 +1,1 @@
+the result of both words books  and  oobsk being an anagram are : true 
