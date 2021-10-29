@@ -12,6 +12,7 @@ const fs = require('fs')
 //   })
 // }
 const promiseReadFile = require('./promisedReadFile')
+
 const heyYall = (inFile) => {
   promiseReadFile(inFile, { encoding: 'utf8' })
     .then((data) => {
