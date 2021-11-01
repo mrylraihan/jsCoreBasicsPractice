@@ -1,15 +1,12 @@
-// const fetch =  require('node-fetch');
 
-
-
-// import fetch from 'node-fetch'
 // the fetch in both are promises 
 
 function fetchKanyeQuote() {
 	const res = fetch('https://api.kanye.rest/')
 		.then((res) => {
-			return res.json()})
-		.then(result=>console.log(result))
+			return res.json()
+		})
+		.then((result) => console.log(result, 'promises'))
 		.catch((err) => console.log(err))
 }
 
@@ -21,7 +18,7 @@ function fetchTest() {
 			.then((res) => {
 				return res.json()
 			})
-			.then((result) => console.log(result))
+			.then((result) => console.log(result, 'promises'))
 			.catch((err) => console.log(err))
 }
 
@@ -33,10 +30,22 @@ async function fetchCatFacts() {
 	try{
 		const res = await fetch('https://catfact.ninja/fact');
 		const data = await res.json();
-		console.log(data);
+		console.log(data, 'Async')
 	}catch(err){
 		console.log(err);
 	}
 }
 
 fetchCatFacts()
+
+async function fetchKanyeQuoteAsync() {
+	try{
+		const res = await fetch('https://api.kanye.rest/')
+		const data = await res.json();
+		console.log(data, 'Async');
+	}catch(err){
+		console.log(err);
+	}
+}
+
+fetchKanyeQuoteAsync()
