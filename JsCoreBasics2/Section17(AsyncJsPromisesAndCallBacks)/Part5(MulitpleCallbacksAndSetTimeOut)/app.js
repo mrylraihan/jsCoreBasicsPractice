@@ -20,7 +20,7 @@ function trackUserHandler() {
   //  then this is run then the event loop checks if this is done to push them back in
   setTimeout(()=>{
     console.log('timer done');
-  }, 2000)
+  }, 4000)
   console.log("Getting position....");
 }
  

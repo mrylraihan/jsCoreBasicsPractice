@@ -5,13 +5,21 @@ function trackUserHandler() {
   console.log('Clicked!');
 }
 
-console.log("second");
-
 button.addEventListener('click', trackUserHandler);
+
+console.log("before timer");
+
+setTimeout(()=>{
+  console.log('in set time out');
+},0)
+
+
+console.log('after set time out');
+
 
 let result = 0
 for (let i = 0; i < 1000000000; i++) {
-  result+=i;
+	result += i
 }
 
-console.log(result);
+console.log(result)
