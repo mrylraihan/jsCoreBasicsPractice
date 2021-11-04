@@ -28,7 +28,7 @@ const output = document.querySelector('p')
 const setTimer = (duration) =>{
     const promise = new Promise((resolve, reject)=>{
         setTimeout(()=>{
-            resolve('Done!'); 
+            resolve('Done!'); // will be the return of the promise is sucessful
         }, duration);
      });
      return promise
@@ -41,7 +41,7 @@ function trackUserHandler() {
 		(posData) => {
 			console.log('before timer in success portion')
 			setTimer(2000).then(data=>{
-                console.log(data + '1', posData);
+                console.log(data + '1', posData);//data is the resolve('Done!'), this will equal Done!1 + posData
             })
 		},
 		(error) => {
@@ -53,3 +53,9 @@ function trackUserHandler() {
 	// console.log('Another Test')
 }
 button.addEventListener('click', trackUserHandler)
+
+// Sending positions
+//getting position....
+//Done!  after other stuff
+//before timer in success portion
+// Done!1 GeolocationPosition {coords: GeolocationCoordinates, timestamp: 1636038086445}

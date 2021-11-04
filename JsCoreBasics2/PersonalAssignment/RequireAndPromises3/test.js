@@ -2,6 +2,7 @@ function showMeAWord(printF) {
 	printF()
 }
 
+
 const wordLogger = () => {
 	const promise = new Promise((resolve, reject) => {
 		showMeAWord(() => {
