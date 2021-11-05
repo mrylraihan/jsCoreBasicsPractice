@@ -14,6 +14,7 @@ const wordLogger = () => {
 function testPromise() {
 	wordLogger()
 		.then(data => console.log(data))
+		.catch(error=>console.log(error))
 }
 
 testPromise();
