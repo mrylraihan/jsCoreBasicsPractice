@@ -7,17 +7,18 @@ function showMeAWord(printF, word) {
 const wordLogger = (word)=>{
     const promise = new Promise((resolve, reject)=>{
         showMeAWord(()=>{
+             if (!word)reject('word is undefined or empty')
             resolve(word)
         },word )
     });
     return promise
 }
-
-function testPromise() {
-    wordLogger('testing').then(data=>{
+const test = 'test'
+function testPromise(a) {
+    wordLogger(a).then(data=>{
         console.log(data += ' more words');
         return data;
     }).then(data =>console.log(data+ ' and again!'))
 }
 
-testPromise()
+testPromise(test)
