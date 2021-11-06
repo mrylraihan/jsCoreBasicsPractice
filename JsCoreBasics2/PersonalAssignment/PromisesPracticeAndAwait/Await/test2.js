@@ -17,4 +17,7 @@ const testPromise = async ()=>{
     console.log(fName);
 }
 
+
 testPromise();
+
+// testing Await
