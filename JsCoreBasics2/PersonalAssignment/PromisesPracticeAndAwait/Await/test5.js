@@ -30,3 +30,4 @@ callBackPromise('another Word')
 .then(str=> str+= '!')
 .then(str=>console.log(str))
 .catch(error=>console.log(error))
+// try another one after you reviewed section 17 again
