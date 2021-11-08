@@ -28,6 +28,7 @@ const setTimer = (duration) => {
 }
 
 function trackUserHandler() {
+	console.log('Sending position....')
 	let positionData
 	getPosition()
 		.then((posData) => {
@@ -39,8 +40,8 @@ function trackUserHandler() {
 			 return 'on we go...  ';
 		 })
 		.then((data) => console.log(data, positionData))
-	setTimer(1000).then(() => console.log('Timer is Done'))
-	console.log('getting position....')
+	// setTimer(1000).then(() => console.log('Timer is Done'))
+	console.log('finished!')
 	// console.log('Another Test')
 }
 button.addEventListener('click', trackUserHandler)

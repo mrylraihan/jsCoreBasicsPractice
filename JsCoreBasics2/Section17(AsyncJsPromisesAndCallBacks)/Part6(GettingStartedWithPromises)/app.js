@@ -15,8 +15,7 @@ function trackUserHandler() {
   navigator.geolocation.getCurrentPosition(
     posData=>{
       setTimer(2000).then(data=> {
-        console.log(data);
-        console.log(posData);
+        console.log(data, posData);
       })
       },
       error=>{

@@ -30,6 +30,7 @@ function trackUserHandler() {
 	getPosition()
 		.then((posData) => setTimer(2000, posData))
 		.then((data) => console.log(data)) // this data is the return of the setTimer
+		.catch(error=>console.log(error))
 	setTimer(1000).then(() => console.log('Timer is Done'))
 	console.log('getting position....')
 	// console.log('Another Test')
