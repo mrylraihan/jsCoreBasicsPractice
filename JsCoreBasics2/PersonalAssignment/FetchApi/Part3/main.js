@@ -1,16 +1,20 @@
 
 // the fetch in both are promises 
+const h1 = document.getElementById('h1')
+const btn = document.querySelector('button')
 
 function fetchKanyeQuote() {
 	const res = fetch('https://api.kanye.rest/')
 		.then((res) => {
 			return res.json()
 		})
-		.then((result) => console.log(result, 'promises'))
+		.then((result) => {
+			h1.textContent = result.quote
+			console.log(result, 'promises')})
 		.catch((err) => console.log(err))
 }
 
-fetchKanyeQuote()
+btn.addEventListener('click', fetchKanyeQuote)
 
 
 function fetchTest() {
