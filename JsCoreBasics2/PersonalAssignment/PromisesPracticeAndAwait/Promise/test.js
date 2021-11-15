@@ -18,3 +18,4 @@ function testPromise() {
 }
 
 testPromise();
+console.log('after testPromise')

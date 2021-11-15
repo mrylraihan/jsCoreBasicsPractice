@@ -8,6 +8,7 @@ function sayHello(a, b) {
 
 sayHello(hello, "mike");//hello mike
 
+
 const alerting= ()=> alert("hey u clicked me!")
 
 const btn = document.getElementById('btn')
