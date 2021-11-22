@@ -37,6 +37,3 @@ xhr.onload = function(){
 
 // this will send the request
 xhr.send()
-
-
-

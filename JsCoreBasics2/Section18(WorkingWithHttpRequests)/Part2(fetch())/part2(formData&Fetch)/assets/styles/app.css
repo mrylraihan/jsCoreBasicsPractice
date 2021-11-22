@@ -96,4 +96,6 @@ section {
   background: #dd2929;
 }
 
-
+.hide{
+  display: none;
+}
