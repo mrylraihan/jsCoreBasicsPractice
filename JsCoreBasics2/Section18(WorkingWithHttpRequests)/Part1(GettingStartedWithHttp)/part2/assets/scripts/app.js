@@ -36,6 +36,7 @@ function fetchPosts() {
 	sendHttpRequest('GET', 'https://jsonplaceholder.typicode.com/posts').then(
 		(responseData) => {
 			const listOfPosts = responseData
+			console.log(listOfPosts);
 			console.log(listOfPosts)
 			for (const post of listOfPosts) {
 				const postEl = document.importNode(postTemplate.content, true)
