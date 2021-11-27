@@ -23,13 +23,14 @@ console.log("hey outside of test!"); //prints second
 
 function testPromise(p1, p2, fName) {
 	return new Promise((resolve, reject)=>{
-		if (!p1 || !p2) reject(console.error)
+		if (p1 === null||p2 ===null) reject(console.error)
 		resolve(fName(p1,p2))
 	})
 }
 
-testPromise().then(data=>console.log(data)).catch(()=>{
+
+testPromise().then(data=>console.log(data, '1')).catch(()=>{
 	console.error
-	return 'tank this instead'
+	return 'take this instead'
 })
 .then(data=>console.log(data))
