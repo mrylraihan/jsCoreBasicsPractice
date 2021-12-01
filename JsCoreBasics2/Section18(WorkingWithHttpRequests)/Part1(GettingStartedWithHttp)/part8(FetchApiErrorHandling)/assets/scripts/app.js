@@ -16,12 +16,27 @@ function sendHttpRequest(method, url, data) {
             // Authorization: `Bearer ${TOKEN}`
          }
      })
-    .then(response=>response.json())
+    .then(response=>{
+        if (response.status >= 200 && response.status < 300) {
+            return response.json()
+        }else{
+           return response.json().then(data=>{
+                console.log(data);
+                throw new Error('something went wrong server-side')
+            })
+        }
+    })
+    // network connectivity issues would lead us to this catch block
+    .catch(error=>{
+        console.log(error);
+        throw new Error('Something went wrong with your request!')
+    })
    
 }
 
 
 function fetchPosts() {
+    // broke this on purpose to trigger the error handling 
     sendHttpRequest('GET', 'https://jsonplaceholder.typicode.com/posts')
     .then(responseData=>{
          const listOfPosts = responseData
@@ -33,7 +48,8 @@ function fetchPosts() {
                 postEl.querySelector('li').id = post.id
                 listElement.append(postEl)
             }
-    }).catch(error=>console.log(error.message))
+    })
+    .catch(error=>console.log(error.message))
 }
 async function createPost(title, content){
    try {

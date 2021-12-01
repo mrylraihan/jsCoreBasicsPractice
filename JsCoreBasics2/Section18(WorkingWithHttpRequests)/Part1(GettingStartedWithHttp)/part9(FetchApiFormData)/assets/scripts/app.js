@@ -9,19 +9,29 @@ const postList = document.querySelector('ul')
 function sendHttpRequest(method, url, data) {
      return fetch(url, {
          method: method, 
-         body: JSON.stringify(data),
-         headers :{
-            //  where you would add them
-            'Content-Type':'application/json' 
-            // Authorization: `Bearer ${TOKEN}`
-         }
+         body: data,
      })
-    .then(response=>response.json())
+    .then(response=>{
+        if (response.status >= 200 && response.status < 300) {
+            return response.json()
+        }else{
+           return response.json().then(data=>{
+                console.log(data);
+                throw new Error('something went wrong server-side')
+            })
+        }
+    })
+    // network connectivity issues would lead us to this catch block
+    .catch(error=>{
+        console.log(error);
+        throw new Error('Something went wrong with your request!')
+    })
    
 }
 
 
 function fetchPosts() {
+    // broke this on purpose to trigger the error handling 
     sendHttpRequest('GET', 'https://jsonplaceholder.typicode.com/posts')
     .then(responseData=>{
          const listOfPosts = responseData
@@ -33,17 +43,19 @@ function fetchPosts() {
                 postEl.querySelector('li').id = post.id
                 listElement.append(postEl)
             }
-    }).catch(error=>console.log(error.message))
+    })
+    .catch(error=>console.log(error.message))
 }
 async function createPost(title, content){
    try {
        const userId = Math.random();
-       const post = {
-           title: title, 
-           body: content, 
-           userId : userId
-       };
-       return sendHttpRequest('POST', 'https://jsonplaceholder.typicode.com/posts', post)
+    //    formData instead , the form we are passing is the one we located on the top 
+       const fd = new FormData(form);
+    //    this is how we would manually build our formData by appending to it 
+    //    fd.append('title',title)
+    //    fd.append('body',content)
+       fd.append('userId',userId)
+       return sendHttpRequest('POST', 'https://jsonplaceholder.typicode.com/posts', fd)
    } catch (error) {
     console.log(error.message);   
    }
