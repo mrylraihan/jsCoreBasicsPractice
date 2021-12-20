@@ -25,7 +25,7 @@ function calculateTotal(price, salesTaxRate) {
 const total = calculateTotal(4.5, 0.1);
 
 // Older way:
-function calculateTotal(price, salesTaxRate) {
+  function calculateTotal(price, salesTaxRate) {
   return price + price * salesTaxRate;
 }
 calculateTotal(4.5, 0.1);
@@ -53,4 +53,3 @@ const printingArray = (a) =>a.forEach(element => {
 printingArray(array1);
 
  const h1 = document.querySelector('h1').innerHTML += " <a href='http://www.coolsite.net'>site</a>";
-
