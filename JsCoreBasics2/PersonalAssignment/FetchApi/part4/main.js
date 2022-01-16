@@ -4,7 +4,9 @@
 const btn = document.querySelector('button')
 const emailList = document.querySelector('ul')
 
+
 function fetchAllUsers() {
+	
 	const res = fetch('http://localhost:4741/allUsers')
 		.then((res) => {
 			return res.json()

@@ -11,3 +11,4 @@ const filteredList = DUMMY_EXPENSES.filter(item=>{
 })
 
 console.log(filteredList);
+console.log("it worked!");
