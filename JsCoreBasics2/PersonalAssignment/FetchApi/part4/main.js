@@ -7,7 +7,7 @@ const emailList = document.querySelector('ul')
 
 function fetchAllUsers() {
 	
-	const res = fetch('http://localhost:4741/allUsers')
+	const res = fetch('http://localhost:4741/cafes')
 		.then((res) => {
 			return res.json()
 		})

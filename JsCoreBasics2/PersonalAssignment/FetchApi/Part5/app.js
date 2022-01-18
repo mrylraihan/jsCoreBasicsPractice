@@ -5,7 +5,7 @@ const asyncButton = document.getElementById('async')
 const axiosButton = document.getElementById('axios')
 const seeAll = document.getElementById('seeAll')
 const listOfQs = document.getElementById('listofQ')
-
+console.log(listOfQs);
 
 
 fetchButton.addEventListener('click', apiCalls.fetchKanye)
@@ -16,14 +16,15 @@ axiosButton.addEventListener('click', apiCalls.axiosKanye)
 
 
 const showAllQuotes = ()=>{
-    apiCalls.listOfQuotes.forEach(ele=>{
-
+    // will replace the inner html of the to an empty string so we can repopulate it without doubles 
+    listOfQs.innerHTML = ''
+    apiCalls.listOfQuotes.forEach(ele=>{ 
         const li = document.createElement('li')
         li.textContent = ele
         console.log(li)
         listOfQs.append(li)
-        
     })
+
     console.log(apiCalls.listOfQuotes);
 }
 
