@@ -7,6 +7,7 @@ const seeAll = document.getElementById('seeAll')
 const listOfQs = document.getElementById('listofQ')
 console.log(listOfQs);
 
+const title = document.querySelector('title')
 
 fetchButton.addEventListener('click', apiCalls.fetchKanye)
 
@@ -18,6 +19,7 @@ axiosButton.addEventListener('click', apiCalls.axiosKanye)
 const showAllQuotes = ()=>{
     // will replace the inner html of the to an empty string so we can repopulate it without doubles 
     listOfQs.innerHTML = ''
+    title.innerText = 'Kanyes Quotes'
     apiCalls.listOfQuotes.forEach(ele=>{ 
         const li = document.createElement('li')
         li.textContent = ele
