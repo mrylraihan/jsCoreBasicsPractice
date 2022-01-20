@@ -155,3 +155,16 @@ const sumTestWithInitialValue = testArray.reduce((p, c)=>p+c, 10)
 //10 + 1 +2 +3+4+5 = 25
 console.log(sumTestWithInitialValue);//25
 // the initial value here is 10 
+
+const p = {
+    'hello-world':'world'
+}
+console.log(p['hello-world']);
+
+testArray.sort((a, b)=>b-a)
+console.log(testArray);
+
+const moreThen3 = testArray.filter(a=>a>3)
+console.log(moreThen3);
+const total = moreThen3.reduce((a,b)=>a+b, 10)
+console.log(total);
