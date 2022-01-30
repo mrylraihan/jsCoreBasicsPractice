@@ -53,8 +53,8 @@ const setSecretSantaHandler = ()=> {
 	console.log(rdmList2);
     console.log(newSSCopy);
 }
-const array= ["cat", 'Dog',1]
-console.log(array.indexOf());
-console.log(array[1]);
-
+// const array= ["cat", 'Dog',1]
+// console.log(array.indexOf());
+// console.log(array[1]);
+console.log('create your secret Santa list!');
 ssbtn.addEventListener('click', setSecretSantaHandler)
