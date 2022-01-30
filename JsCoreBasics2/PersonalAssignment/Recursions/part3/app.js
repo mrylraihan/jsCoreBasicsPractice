@@ -41,69 +41,6 @@ function sumRange(n) {
 
 sumRange(5);//15
 
-// function sumRangRec(n) {
-//     let total = 0
-//     total = total + n;
-//     if(n === 0){
-//         console.log(total);
-//         return total
-//     }
-//     console.log(n);
-//     sumRangRec(n - 1)
-// }
-
-// sumRangRec(5)//
-
-
-function sumRangRecursive(n, total = 0) {
-    if(n <= 0){
-        console.log(total);
-        return total
-    }
-    return sumRangRecursive(n-1 , total + n)
-}
-
-sumRangRecursive(5, 0)
-
-// Another example
-function printChildrenRecursive(t) {
-    if(t.children.children === 0){
-        return
-    }
-    t.children.forEach(child => {
-        console.log(child.name);
-        printChildrenRecursive(child);
-    });
-}
-
-const tree = {
-    name:'John', 
-    children: [{
-        name:'Jim',
-        children:[]
-    },
-    {
-        name:'Zoe',
-        children: [
-            {name:'Kyle', children:[]},
-            {name:'Sophia', children:[]}
-        ]
-    }
-    ],
-}
-
-printChildrenRecursive(tree)
-
-
-
-
-// // Array.reduce practice
-// const array2 = [1,2,3,4,5]
-
-// const sumReduce = array2.reduce((preV, curV)=> preV+=curV)
-// console.log(sumReduce);
-
-
 // 2* 2* 2
 
 let result = 1
@@ -135,18 +72,6 @@ Input: 'computerize'
 Output: 6
 */
 
-const countConsonants2 = (sentence) => {
-    const newSentence = sentence.split('')
-    let count = 0
-    newSentence.forEach(ele => {
-        if (ele !== 'a' && ele !== 'e' && ele !== 'i' && ele !== 'o' && ele !== 'u' && ele !== ' ') {
-            count += 1
-        }
-    })
-    return count
-}
-
-console.log(countConsonants2('Hello im Wallie'))
 const countConsonants = (string, num = 0) => {
     //   if(string.length === 0)
     if (string === '') return num
@@ -168,22 +93,7 @@ console.log('it should be 5:', countConsonants('recursion'))
 console.log('it should be 6:', countConsonants('computerize'))
 
 
-
-/*
-Write a function that given a string, counts total number of consonants in it.
-A consonant is a English alphabet character that is not vowel (a, e, i, o and u).
-Examples of constants are b, c, d, f, g, ..
-input will never have spaces or non letter characters
-Examples:
-Input: 'hello'
-Output: 3
-Input: 'recursion'
-Output: 5
-Input: 'computerize'
-Output: 6
-*/
-
-const countConsonants5 = (sentence) => {
+const countConsonants2 = (sentence) => {
     const newSentence = sentence.split('')
     let count = 0
     newSentence.forEach(ele => {
@@ -194,26 +104,10 @@ const countConsonants5 = (sentence) => {
     return count
 }
 
-console.log(countConsonants5('Hello im Wallie'))
-// const countConsonants = (string, num = 0) => {
-//     //   if(string.length === 0)
-//     if (string === '') return num
-//     // base case
-//     //   if the string is empty -- base case achieved
-//     // action
-//     //   someway of knowing what vowels ['a', 'e', 'i', 'o', 'u']
-//     const vowelList = ['a', 'e', 'i', 'o', 'u']
-//     // if the character is not in the vowels array we know we want to increment the number
-//     if (!vowelList.includes(string[0])) num++
-//     string = string.slice(1)
-//     // recursive case
-//     // word
-//     return countConsonants(string, num)
-// }
+console.log(countConsonants2('Hello im Wallie'))
 
-// console.log('it should be 3:', countConsonants('hello'))
-// console.log('it should be 5:', countConsonants('recursion'))
-// console.log('it should be 6:', countConsonants('computerize'))
+
+
 
 let count = 0
 const countConsonants3 = (word, num = 0) => {
@@ -255,3 +149,17 @@ const countConsonants4 = (w) => {
 
 console.log(countConsonants4('wallie'))
 // try to solve with spread operator
+
+
+const countConsonants5 = (sentence) => {
+    const newSentence = sentence.split('')
+    let count = 0
+    newSentence.forEach(ele => {
+        if (ele !== 'a' && ele !== 'e' && ele !== 'i' && ele !== 'o' && ele !== 'u' && ele !== ' ') {
+            count += 1
+        }
+    })
+    return count
+}
+
+console.log(countConsonants5('Hello im Wallie'))
