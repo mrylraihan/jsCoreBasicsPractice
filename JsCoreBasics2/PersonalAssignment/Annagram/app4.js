@@ -1,4 +1,4 @@
-const intArray = [1, 2, 3, 4, -3, 0, -5]
+const intArray = [1, 2, 3, 4, -2, 0, -5]
 
 let total = intArray[0] + intArray[1]
 // console.log(total);
@@ -9,13 +9,20 @@ const getLowestSum = (arr)=>{
     arr.forEach(num1 => {
         arr.forEach(num2=>{
             if(arr.indexOf(num1) !== arr.indexOf(num2)){
-                // closest to 0
-                if(total>(Math.abs((num1, num2)))){
+                // // closest to 0
+                let subtotal = num1 + num2
+                console.log('Subtotal '+subtotal+'= '+num1+' + '+num2);
+                const fullN = Math.abs(subtotal)
+                console.log(fullN+' using Math.abs()');
+
+                if(total>fullN){
+                // if(total>Math.abs((num1 + num2))){
                 // if(total>(Math.abs(num1) + Math.abs(num2))){
                     total=num1+num2
                     console.log(total);
                     a = num1
                     b = num2
+                }else{
                 }
             }
             return [total, num1, num2]
@@ -66,4 +73,12 @@ console.log(getLowestSum(intArray))
 // arr = new Array(1, 60, -10, 70, -80, 85);
 // minAbsSumPair(arr, 6);
 
-console.log(Math.abs(-5+ 3));
+console.log(Math.abs(5, 3));
+// will only return the first arg passed in 
+
+let test = 2
+if(0>test){
+    console.log(0);
+}else {
+    console.log(test);
+}
