@@ -15,7 +15,7 @@ const getLowestSum = (arr)=>{
                 const fullN = Math.abs(subtotal)
                 console.log(fullN+' using Math.abs()');
 
-                if(total>fullN){
+                if(Math.abs(total)>fullN){
                 // if(total>Math.abs((num1 + num2))){
                 // if(total>(Math.abs(num1) + Math.abs(num2))){
                     total=num1+num2
@@ -35,50 +35,26 @@ const getLowestSum = (arr)=>{
 
 console.log(getLowestSum(intArray))
 
-// closest to 0 
 
 
-// function minAbsSumPair(arr, arr_size) {
-//     var inv_count = 0;
-//     var l, r, min_sum, sum, min_l, min_r;
-    
-//     /* Array should have at least
-//     two elements*/
-//     if (arr_size < 2) {
-//         document.write("Invalid Input");
-//         return;
-//     }
-    
-//     /* Initialization of values */
-//     min_l = 0;
-//     min_r = 1;
-//     min_sum = arr[0] + arr[1];
-    
-//     for (l = 0; l < arr_size - 1; l++) {
-//         for (r = l + 1; r < arr_size; r++) {
-//             sum = arr[l] + arr[r];
-//             if (Math.abs(min_sum) > Math.abs(sum)) {
-//                 min_sum = sum;
-//                 min_l = l;
-//                 min_r = r;
+// my answer that i came up with and changed the one on top 
+//                 // 0,1,2,3,4,5
+// const array1 = [-7, 2, 3, 4, 5, 6, 10, 9, 9]
+// // console.log(array1.indexOf(2))
+
+// let total = array1[0] + array1[4]//6
+
+// array1.forEach(ele1 => {
+//     array1.forEach(ele2 => {
+//         if (array1.indexOf(ele1) !== array1.indexOf(ele2)) {
+//             let sum = ele1 + ele2
+//             let nonNegNum = Math.abs(sum)
+//             if (nonNegNum < Math.abs(total)) {
+//                 console.log(ele1 + ele2 + '= ' + ele1 + ' + ' + ele2);
+//                 total = sum
 //             }
 //         }
-//     }
-    
-//     console.log("The two elements whose sum is minimum are "
-//     + arr[min_l] + " and " + arr[min_r] + " " + arr_size);
-// }
+//     })
+// })
 
-// // Driver Code
-// arr = new Array(1, 60, -10, 70, -80, 85);
-// minAbsSumPair(arr, 6);
-
-console.log(Math.abs(5, 3));
-// will only return the first arg passed in 
-
-let test = 2
-if(0>test){
-    console.log(0);
-}else {
-    console.log(test);
-}
+// console.log(total);
