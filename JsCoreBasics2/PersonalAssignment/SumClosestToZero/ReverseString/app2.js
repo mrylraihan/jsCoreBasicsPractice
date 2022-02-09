@@ -32,3 +32,17 @@ const reverseWord3 = (w) => {
 }
 
 console.log(reverseWord3(word))
+
+
+
+
+const array3 = [1,2,0,4,0,5,6]
+
+const moveAllZeros = (arr)=>{
+  const arrZero = arr.filter(ele=> ele === 0)  
+  const arrNew = arr.filter(ele => ele !== 0)
+  
+  return [...arrNew, ...arrZero];
+}
+
+console.log(moveAllZeros(array3))
