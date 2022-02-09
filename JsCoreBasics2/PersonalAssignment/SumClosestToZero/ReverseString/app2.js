@@ -35,7 +35,7 @@ console.log(reverseWord3(word))
 
 
 
-
+// moving all 0 to the end while keeping the order
 const array3 = [1,2,0,4,0,5,6]
 
 const moveAllZeros = (arr)=>{
@@ -46,3 +46,16 @@ const moveAllZeros = (arr)=>{
 }
 
 console.log(moveAllZeros(array3))
+
+
+// reverse an array In place
+
+const reverseArrayInPlace = function (array) {
+    var arrLength = array.length;
+    for (i = 0; i < arrLength; i++) {
+        array.splice(i, 0, array.pop());
+    }
+    return array
+}
+
+console.log(reverseArrayInPlace([1, 2, 3]))

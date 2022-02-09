@@ -1,13 +1,13 @@
 const arr = [1, 2, 3, 4, 5]
-const reverseArrayInPlace = function (array) {
-    let arrLength = array.length;
-    for (i = 0; i < arrLength; i++) {
-        array.splice(i, 0, array.pop());
-    }
-    return array
-}
+// const reverseArrayInPlace = function (array) {
+//     let arrLength = array.length;
+//     for (i = 0; i < arrLength; i++) {
+//         array.splice(i, 0, array.pop());
+//     }
+//     return array
+// }
 
-console.log(reverseArrayInPlace(arr))
+// console.log(reverseArrayInPlace(arr))
 
 // 
 
@@ -15,6 +15,7 @@ console.log(reverseArrayInPlace(arr))
 const reverseArrayInPlace2 = function (array) {
    for(i = 0; i < Math.abs(array.length/2) ; i ++){
      let temp = array[i]
+     console.log(array[array.length - i - 1]);
      array[i] = array[array.length -i - 1]
      array[array.length - i - 1] = temp
    }
@@ -22,4 +23,3 @@ const reverseArrayInPlace2 = function (array) {
 }
 
 console.log(reverseArrayInPlace2(arr))
-
