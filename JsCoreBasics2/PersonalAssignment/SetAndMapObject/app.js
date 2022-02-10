@@ -1,6 +1,6 @@
 const array1 = [1,2,3,4,5,5,6]
 const setArray = new Set(array1);
-console.log(setArray);//Set(6) {1, 2, 3, 4, 5,6}
+console.log(setArray);//Set(6) {1, 2, 3, 4, 5, 6}
 //convert to an array 
 const revertedArray = [...setArray];
 //or we can do Array.from(setArray)
