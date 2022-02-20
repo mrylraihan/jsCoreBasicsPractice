@@ -42,3 +42,6 @@ function printThis() {
     console.log(something2.call(this,'apple'));
 }
 btn.addEventListener('click', printThis)
+
+
+// hey
