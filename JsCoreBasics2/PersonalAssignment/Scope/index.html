@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="app.js" defer></script>
+    <style>
+        code{
+            background-color: rgb(200, 198, 198);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Scope Explained in Javascript</h1>
+    <hr>
+    <ul>
+        <li>Global Scope
+            <ul>
+                <li>global variables can be accessed from anywhere</li>
+                <li>in the context of a browser, they are found on the<code> window </code>object (aside from let and const) </li>
+            </ul>
+        </li>
+        <li>Function Scope
+            <ul>
+                <li>Variables declared within a function can only be accessed within that function</li>
+                <li>the older<code> var </code> keyword used function scope</li>
+            </ul>
+        </li>
+        <li>Block Scope
+            <ul>
+                <li>the newest form of scope, variables declared with in a<code> {} </code>cannot be accessed outside of it</li>
+                <li>made possible with<code> let </code>and<code> const </code>.</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>
