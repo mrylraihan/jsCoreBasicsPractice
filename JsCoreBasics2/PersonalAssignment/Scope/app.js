@@ -1,3 +1,4 @@
+// https://www.youtube.com/watch?v=bD-62OMzni0
 // Global Scope
 var a = 20; // this will be placed on the window object/global scope 
 // you can actually see it on the window object in the browser
