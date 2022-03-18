@@ -18,3 +18,14 @@ obj2['newStuff'] = 'stuff'// this will create a property is it doesnt exist in o
 obj2.hobbies = ['cooking', 'cleaning']
 console.log(obj2.hobbies);//['cooking', 'cleaning']
 console.log(obj2);
+
+
+
+const stuff = 'stuff'
+const table = 'table'
+// how to add properties to an empty object using array(square bracket) notation
+let objt = {}//empty object
+//the value of stuff will be our key and the value of table will be our value 
+//creating our key value pair
+objt[stuff] = table
+console.log(objt);//{stuff: 'table'}

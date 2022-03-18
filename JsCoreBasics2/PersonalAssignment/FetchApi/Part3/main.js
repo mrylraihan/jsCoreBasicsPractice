@@ -53,3 +53,5 @@ async function fetchKanyeQuoteAsync() {
 }
 
 fetchKanyeQuoteAsync()
+
+console.log('hi');

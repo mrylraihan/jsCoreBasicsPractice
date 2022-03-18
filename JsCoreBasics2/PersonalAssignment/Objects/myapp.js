@@ -62,7 +62,7 @@ console.log(Iphone.model);
 console.log(Iphone.textMessage());
 
 // an object containing an array
-var car = {
+const car = {
   maker: "Bmw",
   color: "red",
   speed: 122,
@@ -118,3 +118,14 @@ console.log(person1.sayHi());
   ];
 
   arrayMix[2][0]; //will point to embed in the embeded array
+
+
+
+const stuff = 'stuff'
+const table = 'table'
+// how to add properties to an empty object using array(square bracket) notation
+let obj = {}//empty object
+//the value of stuff will be our key and the value of table will be our value 
+//creating our key value pair
+obj[stuff] = table
+console.log(obj);//{stuff: 'table'}
