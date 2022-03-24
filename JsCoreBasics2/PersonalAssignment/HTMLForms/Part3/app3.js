@@ -15,6 +15,7 @@ const getFormData=(e)=> {
         jsonObject[field[0]] = field[1];
     }
     
+    console.log(formData.entries(), 'with.entries()'),// 'with.entries()'//{}
     console.log(JSON.stringify(formData));//{}
     console.log(JSON.stringify(jsonObject));//{"username":"Wayel","useracc":"4444","password":"ffffffff"}
 }
