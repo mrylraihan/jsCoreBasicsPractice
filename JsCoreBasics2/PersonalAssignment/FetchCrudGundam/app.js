@@ -5,7 +5,8 @@ const btn3 = document.getElementById('btn3')
 const btn4 = document.getElementById('btn4')
 const btn5 = document.getElementById('btn5')
 
-const url = 'http://localhost:3000/gundams/'
+
+const url = 'http://localhost:4000/gundams/'
 const editId = 1
 const deletedId = 5
 const patchId = 4
@@ -110,3 +111,22 @@ const fetchAllPilots = () => {
     }).catch(err => console.log(err))
 }
 btn7.addEventListener('click', fetchAllPilots)
+
+
+// update one but get all
+const btn8 = document.getElementById('btn8')
+const updateOneButGetAll = ()=>{
+    const pilotId = '628bc2e8011bbfbfe344c313'
+    const data = { gundam:'628bc2e8011bbfbfe344c30d'}
+    fetch(`http://localhost:3000/pilots/${pilotId}/allgundams`, {
+        method:"PUT", 
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    })
+    .then(result=>result.json())
+    .then(newFull=>console.log(newFull))
+    .catch(err=>console.log(err))
+}
+btn8.addEventListener('click', updateOneButGetAll)
