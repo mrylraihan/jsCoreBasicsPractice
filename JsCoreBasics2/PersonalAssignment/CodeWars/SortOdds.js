@@ -58,3 +58,4 @@ function sortArray3(array){
 let test1 = [1,2,3,4]
 let mapTest = test1.map(ele=>ele%2==0 ? ele:false)
 console.log(mapTest)
+
