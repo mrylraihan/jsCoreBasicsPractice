@@ -16,3 +16,18 @@ function printEle(ele,idx,arr){
 const test = arr1.forEach(ele => ele)// will return undefined
 
 console.log(test)
+
+let word = 'word'
+word = word.split('')
+word.forEach(ele=>console.log(ele))
+
+// forEach only works with arrays 
+
+let sum = 0;
+
+let numbers = [1,2,3,4,5];
+
+numbers.forEach(ele=> sum += ele);
+console.log(sum)
+
+// just because it doesnt return anything it doesnt mean it doesnt do stuff.
