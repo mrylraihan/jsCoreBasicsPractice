@@ -11,6 +11,7 @@ const getFormData = (e)=>{
     console.log(keyValueObject);
 }
 
+
+
 // GETTING DATA FROM FORM 1
 form.addEventListener('submit', getFormData)
-
